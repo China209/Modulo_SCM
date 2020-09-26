@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaVista", "CapaVista\CapaVista.csproj", "{E0199585-0A7E-4152-87BD-4C5E01A6CACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototipo_No_Funcional", "Prototipo_No_Funcional\Prototipo_No_Funcional.csproj", "{E619BC26-084F-4ACC-82B2-8650A95DC205}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0199585-0A7E-4152-87BD-4C5E01A6CACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0199585-0A7E-4152-87BD-4C5E01A6CACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0199585-0A7E-4152-87BD-4C5E01A6CACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0199585-0A7E-4152-87BD-4C5E01A6CACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E619BC26-084F-4ACC-82B2-8650A95DC205}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E619BC26-084F-4ACC-82B2-8650A95DC205}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E619BC26-084F-4ACC-82B2-8650A95DC205}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E619BC26-084F-4ACC-82B2-8650A95DC205}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1AD66FA-0369-4E80-BEFE-730D5A270FEC}
+	EndGlobalSection
+EndGlobal

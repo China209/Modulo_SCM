@@ -1,0 +1,13 @@
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\CapaVista.csprojAssemblyReference.cache
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.Login.frmLogin.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.Mantenimientos.Compras.frmCompras_Principal.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.Mantenimientos.Inventarios.frmInventario_Principal.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.Mantenimientos.Proveedores.frmProveedor_Principal.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.MDI.frmAuxiliar.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\Prototipo_No_Funcional.MDI.frmMDI.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\CapaVista.csproj.GenerateResource.cache
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\CapaVista.csproj.CoreCompileInputs.cache
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\bin\Debug\CapaVista.dll
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\bin\Debug\CapaVista.pdb
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\CapaVista.dll
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\CapaVista\CapaVista\obj\Debug\CapaVista.pdb
