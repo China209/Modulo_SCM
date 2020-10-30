@@ -1,4 +1,7 @@
-﻿using CapaControladorModuloSCM.ControlProcesos;
+﻿/*
+ Este formulario maneja el ingreso de órdenes de compras y pedidos
+ */
+using CapaControladorModuloSCM.ControlProcesos;
 using CapaModeloModuloSCM;
 using CapaModeloModuloSCM.ClasesProcesos;
 using System;
@@ -16,6 +19,7 @@ namespace CapaVistaModuloSCM.Procesos
 {
     public partial class frmCompras : Form
     {
+        //Variables Globales
         private clsControladorGestionCompraPedido controladorCompras = new clsControladorGestionCompraPedido();
         private clsCompraEncabezado compraEncabezado;
         private clsCompraDetalle compraDetalle;
@@ -30,7 +34,7 @@ namespace CapaVistaModuloSCM.Procesos
             BloquearComponentes();
             
         }
-        //
+        //Bloquea componentes
         private void BloquearComponentes()
         {
             dgvCompras.Enabled = false;
@@ -39,30 +43,31 @@ namespace CapaVistaModuloSCM.Procesos
             lblValorTotal.Visible = false;
         }
 
-        //Carga datos al combobox producto, dentro del grid
+        //Carga datos al combobox producto, dentro del grid y fuera de el para compras
         private void cargarProductos_Proveedor()
         {
             cmbProducto.ValueMember = "pk_id_producto";
             cmbProducto.DisplayMember = "nombre_producto";
-            cmbProducto.DataSource = controladorCompras.obtenerDatos("pk_id_producto", "nombre_producto", "productoscm","estado_producto");
+            cmbProducto.DataSource = controladorCompras.obtenerDatos("pk_id_producto", "nombre_producto", "producto","estado_producto");
             cmbProveedor.ValueMember = "pk_id_proveedor";
             cmbProveedor.DisplayMember = "razon_social_proveedor";
             cmbProveedor.DataSource = controladorCompras.obtenerDatos("pk_id_proveedor", "razon_social_proveedor", "proveedor", "estado_proveedor");
             cmbProveedor.Refresh();
             cmbProveedor.SelectedIndex = -1;
         }
+        //Carga datos al combobox producto, dentro del grid y fuera de el para pedido
         private void cargarProductos_Fabrica()
         {
             cmbProducto.ValueMember = "pk_id_producto";
             cmbProducto.DisplayMember = "nombre_producto";
-            cmbProducto.DataSource = controladorCompras.obtenerDatos("pk_id_producto", "nombre_producto", "productoscm", "estado_producto");
+            cmbProducto.DataSource = controladorCompras.obtenerDatos("pk_id_producto", "nombre_producto", "producto", "estado_producto");
             cmbProveedor.ValueMember = "pk_id_fabrica";
             cmbProveedor.DisplayMember = "descripcion_fabrica";
             cmbProveedor.DataSource = controladorCompras.obtenerDatos("pk_id_fabrica", "descripcion_fabrica", "fabrica", "estado_fabrica");
             cmbProveedor.Refresh();
             cmbProveedor.SelectedIndex = -1;
         }
-
+        //Llena datos para compra encabezado
         private clsCompraEncabezado llenarCamposCompraEncabezado(double Total)
         {
 
@@ -75,6 +80,7 @@ namespace CapaVistaModuloSCM.Procesos
             auxMantenimiento.Estado1 = 1;
             return auxMantenimiento;
         }
+        //Llena datos para compra detalle
         private clsCompraDetalle llenarCamposCompraDetalle(int Producto, int CodLinea, int Cantidad, double PrecioU, double SubTotal)
         {
             clsCompraDetalle auxMantenimiento = new clsCompraDetalle();
@@ -87,6 +93,7 @@ namespace CapaVistaModuloSCM.Procesos
             auxMantenimiento.Estado1 = 1;
             return auxMantenimiento;
         }
+        //Llena datos para pedido encabezado
         private clsPedidoEncabezado llenarCamposPedidoEncabezado(double Total)
         {
 
@@ -99,6 +106,7 @@ namespace CapaVistaModuloSCM.Procesos
             auxMantenimiento.Estado1 = 1;
             return auxMantenimiento;
         }
+        //Llena datos para pedido detalle
         private clsPedidoDetalle llenarCamposPedidoDetalle(int Producto, int CodLinea, int Cantidad, double PrecioU, double SubTotal)
         {
             clsPedidoDetalle auxMantenimiento = new clsPedidoDetalle();
@@ -111,6 +119,7 @@ namespace CapaVistaModuloSCM.Procesos
             auxMantenimiento.Estado1 = 1;
             return auxMantenimiento;
         }
+        //Verifica si el radiobutton es compra para habilitar los campos y el grid
         private void rbtnCompra_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnCompra.Checked == true)
@@ -126,7 +135,7 @@ namespace CapaVistaModuloSCM.Procesos
                 lblValorTotal.Visible = true;
             }
         }
-
+        //Verifica si el radiobutton es pedido para habilitar los campos y el grid
         private void rbtnPedido_CheckedChanged(object sender, EventArgs e)
         {
             if (rbtnPedido.Checked == true)
@@ -142,7 +151,7 @@ namespace CapaVistaModuloSCM.Procesos
                 lblValorTotal.Visible = true;
             }
         }
-
+        //Datos Guardados
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (rbtnCompra.Checked == true)
@@ -179,6 +188,7 @@ namespace CapaVistaModuloSCM.Procesos
             lblValorTotal.Text = "0";
             BloquearComponentes();
         }
+        //Realiza los cálculos de precio y subtotal cada vez que se ingresa y traslada a otra fila
         private void dgvCompras_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -188,7 +198,7 @@ namespace CapaVistaModuloSCM.Procesos
                     if (dgvCompras.Rows[e.RowIndex].Cells["txtCantidad"].Value != null)
                     {
                         IDProducto = int.Parse(dgvCompras.Rows[e.RowIndex].Cells["cmbProducto"].Value.ToString());
-                        string sSQL = "SELECT precio_producto FROM productoscm WHERE pk_id_producto=" + IDProducto;
+                        string sSQL = "SELECT precio_producto FROM producto WHERE pk_id_producto=" + IDProducto;
                         OdbcCommand comando = new OdbcCommand(sSQL, conexion.conexion());
                         OdbcDataReader registro = comando.ExecuteReader();
                         while (registro.Read())
@@ -211,18 +221,18 @@ namespace CapaVistaModuloSCM.Procesos
                 MessageBox.Show("Error al cargar compra detalle", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        //Visualza el total
         private void tmrTotal_Tick(object sender, EventArgs e)
         {
             lblValorTotal.Text = SumarColumnas().ToString();
         }
-
+        //Visualiza hora y fecha actual
         private void tmrHoraFecha_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
-
+        //Cierre del Formulario
         private void frmCompras_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult drResultadoMensaje;
@@ -236,7 +246,7 @@ namespace CapaVistaModuloSCM.Procesos
                 e.Cancel = true;
             }
         }
-
+        //Sumar Total 
         private double SumarColumnas()
         {
             TotalValor = 0;
@@ -306,7 +316,7 @@ namespace CapaVistaModuloSCM.Procesos
                 throw;
             }
         }
-        //Registrar cpedidoompra
+        //Registrar pedido 
         private bool RegistrarPedido()
         {
             int CodLinea = 0, Producto, Cantidad, CantidadAnterior;

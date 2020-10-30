@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ Clase de Pedido Encabezado
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,7 @@ namespace CapaModeloModuloSCM.ClasesProcesos
 {
     public class clsPedidoEncabezado
     {
+        //Datos de la tabla
         private int idPedido;
         private int idFabrica;
         private DateTime FechaPedido;

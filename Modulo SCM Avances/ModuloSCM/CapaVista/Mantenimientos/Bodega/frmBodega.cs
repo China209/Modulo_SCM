@@ -1,4 +1,7 @@
-﻿using CapaModeloModuloSCM;
+﻿/*
+ El siguiente formulario es un Mantenimiento con respecto a la tabla Bodega
+ */
+using CapaModeloModuloSCM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
 {
     public partial class frmBodega : Form
     {
+        //Variables Globales
         string UsuarioAplicacion;
         static Form FormularioPadre;
         clsConexion con = new clsConexion();
@@ -23,8 +27,19 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
             UsuarioAplicacion = usuario;
             navegador1.Usuario = UsuarioAplicacion;
             FormularioPadre = formularioPadre;
+            //Cargar Datos de Municipio a Combo
             cargarMunicipio();
+            //Tooltips
+            tltToolTip.SetToolTip(txtCodigo, "Código de los Datos a Ingresar");
+            tltToolTip.SetToolTip(txtDescripcion, "Ingrese la Descripción");
+            tltToolTip.SetToolTip(txtDimension, "Ingrese las Dimensiones");
+            tltToolTip.SetToolTip(txtDireccion, "Ingrese la Dirección");
+            tltToolTip.SetToolTip(txtTelefono, "Ingrese el Teléfono");
+            tltToolTip.SetToolTip(cmbEstado, "Seleccione el Estado: 1 Es Activo y 0 Inactivo");
+            tltToolTip.SetToolTip(cmbMunicipio, "Seleccione el Municipio");
+            tltToolTip.SetToolTip(cmbNombre, "Se visualiza el nombre del Municipio, puede seleccionar una opción y verá su respectivo código");
         }
+        //Metodo para cargar datos al combo
         private void cargarMunicipio()
         {
             try
@@ -35,6 +50,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
                 while (mostrarMuni.Read())
                 {
                     cmbMunicipio.Items.Add(mostrarMuni.GetInt32(0));
+                    cmbNombre.Items.Add(mostrarMuni.GetString(2));
                 }
             }
             catch (Exception ex)
@@ -43,6 +59,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
                 Console.WriteLine(ex.Message);
             }
         }
+        //Navegador
         private void navegador1_Load(object sender, EventArgs e)
         {
             List<string> CamposTabla = new List<string>();
@@ -85,6 +102,57 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
             navegador1.procCargar();
     //        navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
      //       navegador1.ruta = "Ayuda-Modulo.html";
+        }
+        //Cerrar la ventana
+        private void frmBodega_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult drResultadoMensaje;
+            drResultadoMensaje = MessageBox.Show("¿Realmente desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (drResultadoMensaje == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        //Validar el indice de combo
+        private void cmbMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbNombre.SelectedIndex = cmbMunicipio.SelectedIndex;
+        }
+        //Validar indice de combo
+        private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbMunicipio.SelectedIndex = cmbNombre.SelectedIndex;
+        }
+
+        private void txtDimension_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

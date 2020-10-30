@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ Clase de Conexion
+ */
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
@@ -10,10 +13,11 @@ namespace CapaModeloModuloSCM
 {
     public class clsConexion
     {
+        //Establecer la conexion
         public OdbcConnection conexion()
         {
             //creacion de la conexion via ODBC
-            OdbcConnection conn = new OdbcConnection("Dsn=clc_erp");
+            OdbcConnection conn = new OdbcConnection("Dsn=clc_erp");//Dsn de acuerdo al estandar
             try
             {
                 if (conn.State == ConnectionState.Closed)

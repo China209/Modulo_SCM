@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ * Clase Sentencia
+*/
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
@@ -12,7 +15,7 @@ namespace CapaModeloModuloSCM
     public class clsSentencia
     {
         clsConexion cn = new clsConexion();
-
+        //Obtener el tipo de comando, se verifica que sea un stored procedure
         public static OdbcCommand obtenerComando(string sComando, OdbcConnection conexion, bool bEsSP = false)
         {
             dynamic cmd = new OdbcCommand(sComando, conexion);
@@ -20,8 +23,9 @@ namespace CapaModeloModuloSCM
             {
                 cmd.CommandType = CommandType.StoredProcedure;
             }
-            return cmd;
+            return cmd;//retorna el comando
         }
+        //Ejecutar query
         public bool ejecutarQuery(string sConsulta, bool bEsSP = false)
         {
             bool bRespuesta = false;

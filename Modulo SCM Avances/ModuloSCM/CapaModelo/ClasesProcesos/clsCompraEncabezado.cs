@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ Clase de Compra Encabezado
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,7 @@ namespace CapaModeloModuloSCM.ClasesProcesos
 {
     public class clsCompraEncabezado
     {
+        //Datos de Tabla
         private int idCompra;
         private int idProveedor;
         private DateTime FechaCompra;

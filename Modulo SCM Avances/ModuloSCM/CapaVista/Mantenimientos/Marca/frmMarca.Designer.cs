@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMarca));
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblID = new System.Windows.Forms.Label();
@@ -37,6 +39,7 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.dgvMarcaVista = new System.Windows.Forms.DataGridView();
+            this.tltToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcaVista)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +50,7 @@
             this.pnlSuperior.Controls.Add(this.navegador1);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuperior.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(1813, 161);
             this.pnlSuperior.TabIndex = 0;
@@ -56,7 +59,7 @@
             // 
             this.navegador1.BackColor = System.Drawing.Color.Transparent;
             this.navegador1.Location = new System.Drawing.Point(20, 6);
-            this.navegador1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.navegador1.Margin = new System.Windows.Forms.Padding(6);
             this.navegador1.Name = "navegador1";
             this.navegador1.Size = new System.Drawing.Size(2206, 201);
             this.navegador1.TabIndex = 0;
@@ -91,6 +94,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCodigo.Location = new System.Drawing.Point(278, 199);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 27);
@@ -99,6 +103,7 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDescripcion.Location = new System.Drawing.Point(278, 336);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -108,12 +113,17 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(278, 521);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 28);
             this.cmbEstado.TabIndex = 6;
             this.cmbEstado.Tag = "estado_marca";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvMarcaVista
             // 
@@ -123,8 +133,13 @@
             this.dgvMarcaVista.Name = "dgvMarcaVista";
             this.dgvMarcaVista.RowHeadersWidth = 51;
             this.dgvMarcaVista.RowTemplate.Height = 24;
-            this.dgvMarcaVista.Size = new System.Drawing.Size(987, 357);
+            this.dgvMarcaVista.Size = new System.Drawing.Size(692, 357);
             this.dgvMarcaVista.TabIndex = 7;
+            // 
+            // tltToolTip
+            // 
+            this.tltToolTip.IsBalloon = true;
+            this.tltToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // frmMarca
             // 
@@ -141,9 +156,14 @@
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.pnlSuperior);
             this.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMarca";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "2311 - Marca";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMarca_FormClosing);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcaVista)).EndInit();
             this.ResumeLayout(false);
@@ -162,5 +182,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.DataGridView dgvMarcaVista;
+        private System.Windows.Forms.ToolTip tltToolTip;
     }
 }

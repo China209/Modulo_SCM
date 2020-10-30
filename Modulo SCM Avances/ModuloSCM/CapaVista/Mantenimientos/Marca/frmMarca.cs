@@ -12,6 +12,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Marca
 {
     public partial class frmMarca : Form
     {
+        //Variable Globales
         string UsuarioAplicacion;
         static Form FormularioPadre;
         public frmMarca(string usuario, Form formularioPadre)
@@ -20,8 +21,12 @@ namespace CapaVistaModuloSCM.Mantenimientos.Marca
             UsuarioAplicacion = usuario;
             navegador1.Usuario = UsuarioAplicacion;
             FormularioPadre = formularioPadre;
+            //Tooltips
+            tltToolTip.SetToolTip(txtCodigo, "Código de Ingreso de Datos");
+            tltToolTip.SetToolTip(txtDescripcion, "Ingrese la Descripción de la Marca. Ej: Honda");
+            tltToolTip.SetToolTip(cmbEstado, "Seleccione el Estado: 1 Es Activo y 0 Inactivo");
         }
-
+        //Navegador
         private void navegador1_Load(object sender, EventArgs e)
         {
             List<string> CamposTabla = new List<string>();
@@ -57,6 +62,29 @@ namespace CapaVistaModuloSCM.Mantenimientos.Marca
             navegador1.procCargar();
     //       navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
     //        navegador1.ruta = "Ayuda-Modulo.html";
+        }
+        //Cerrar Ventana
+        private void frmMarca_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult drResultadoMensaje;
+            drResultadoMensaje = MessageBox.Show("¿Realmente desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (drResultadoMensaje == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

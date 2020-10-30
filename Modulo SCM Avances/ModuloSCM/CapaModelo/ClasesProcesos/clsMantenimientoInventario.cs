@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ Clase de Movimiento de Inventario
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,7 @@ namespace CapaModeloModuloSCM.ClasesProcesos
 {
     public class clsMantenimientoInventario
     {
+        //Datos de Tabla
         private int idMovimiento;
         private int idTipoMovimiento;
         private int idMovimientoDetalle;

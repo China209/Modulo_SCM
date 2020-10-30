@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*
+ Clase de Compra Detalle
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +11,7 @@ namespace CapaModeloModuloSCM.ClasesProcesos
 {
     public class clsCompraDetalle
     {
+        //Datos de la Tabla
         private int idCompra;
         private int codLinea;
         private int idProducto;

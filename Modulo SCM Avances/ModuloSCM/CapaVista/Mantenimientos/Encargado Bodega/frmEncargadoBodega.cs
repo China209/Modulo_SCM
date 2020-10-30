@@ -1,4 +1,7 @@
-﻿using CapaModeloModuloSCM;
+﻿/*
+ * Este formulario se encarga del mantenimiento de la tabla Encargado Bodega
+*/
+using CapaModeloModuloSCM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
 {
     public partial class frmEncargadoBodega : Form
     {
+        //Variables Globales
         string UsuarioAplicacion;
         static Form FormularioPadre;
         clsConexion con = new clsConexion();
@@ -23,9 +27,17 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
             UsuarioAplicacion = usuario;
             navegador1.Usuario = UsuarioAplicacion;
             FormularioPadre = formularioPadre;
-            cargarBodega();
-            cargarEmpleado();
+            cargarBodega();//Cargar Datos al Combo
+            cargarEmpleado();//Cargar Datos de Empleado al Combo
+            //Tooltips
+            tltToolTip.SetToolTip(txtCodigo, "Código de Ingreso");
+            tltToolTip.SetToolTip(cmbBodega, "Seleccione la Bodega");
+            tltToolTip.SetToolTip(cmbEmpleado, "Seleccione el Empleado");
+            tltToolTip.SetToolTip(cmbNomBodega, "Visualiza el Nombre de la Bodega Seleccionada, puede seleccionar una bodega y visualizar su código en el componente superior"); ;
+            tltToolTip.SetToolTip(cmbNomEmp, "Visualiza el Nombre del Empleado, seleccione y visualizará el código");
+            tltToolTip.SetToolTip(cmbEstado, "Seleccione el Estado: 1 Es Activo y 0 Inactivo");
         }
+        //Cargar Datos de Bodega
         private void cargarBodega()
         {
             try
@@ -36,6 +48,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
                 while (mostrarBodega.Read())
                 {
                     cmbBodega.Items.Add(mostrarBodega.GetInt32(0));
+                    cmbNomBodega.Items.Add(mostrarBodega.GetString(2));
                 }
             }
             catch (Exception ex)
@@ -44,6 +57,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
                 Console.WriteLine(ex.Message);
             }
         }
+        //Cargar Datos de Empleado
         private void cargarEmpleado()
         {
             try
@@ -54,6 +68,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
                 while (mostrarBodega.Read())
                 {
                     cmbEmpleado.Items.Add(mostrarBodega.GetInt32(0));
+                    cmbNomEmp.Items.Add(mostrarBodega.GetString(1));
                 }
             }
             catch (Exception ex)
@@ -62,6 +77,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
                 Console.WriteLine(ex.Message);
             }
         }
+        //Navegador
         private void navegador1_Load(object sender, EventArgs e)
         {
             List<string> CamposTabla = new List<string>();
@@ -104,6 +120,67 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
             navegador1.procCargar();
        //     navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
         //    navegador1.ruta = "Ayuda-Modulo.html";
+        }
+        //Cerrar Ventana
+        private void frmEncargadoBodega_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult drResultadoMensaje;
+            drResultadoMensaje = MessageBox.Show("¿Realmente desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (drResultadoMensaje == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        //Cambiar indice
+        private void cmbNomEmp_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbEmpleado.SelectedIndex = cmbNomEmp.SelectedIndex;
+        }
+        //Cambiar indice
+        private void cmbNomBodega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbBodega.SelectedIndex = cmbNomBodega.SelectedIndex;
+        }
+        //Cambiar indice
+        private void cmbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbNomEmp.SelectedIndex = cmbEmpleado.SelectedIndex;
+        }
+        //Cambiar indice
+        private void cmbBodega_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbNomBodega.SelectedIndex = cmbBodega.SelectedIndex;
+        }
+
+        private void cmbEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbBodega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

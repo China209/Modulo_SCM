@@ -1,4 +1,7 @@
-﻿using CapaModeloModuloSCM;
+﻿/*
+ Este formulario se encarga del mantenimiento de Vehiculo
+ */
+using CapaModeloModuloSCM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +17,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
 {
     public partial class frmVehiculo : Form
     {
+        //Variables Globales
         string UsuarioAplicacion;
         static Form FormularioPadre;
         clsConexion con = new clsConexion();
@@ -23,8 +27,19 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
             UsuarioAplicacion = usuario;
             navegador1.Usuario = UsuarioAplicacion;
             FormularioPadre = formularioPadre;
-            cargarMarca();
+            cargarMarca();//Cargar Datos de Marca
+            //Tooltips
+            tltToolTip.SetToolTip(txtAnio, "Ingrese el Año del Vehículo");
+            tltToolTip.SetToolTip(txtCodigo, "Código de los datos a Ingresar");
+            tltToolTip.SetToolTip(txtColor, "Ingrese el Color del Vehículo");
+            tltToolTip.SetToolTip(txtCombustible, "Ingrese el Tipo de Combustible del Vehículo");
+            tltToolTip.SetToolTip(txtModelo, "Ingrese Modelo del Vehículo");
+            tltToolTip.SetToolTip(txtPlaca, "Ingrese el Número de Placa");
+            tltToolTip.SetToolTip(cmbMarca, "Seleccione la Marca del Vehículo, el nombre de la misma se mostrará en el componente debajo de este");
+            tltToolTip.SetToolTip(cmbNombre, "Visualiza el Nombre de la Marca, puede seleccionar este para visualizar el Código del mismo");
+            tltToolTip.SetToolTip(cmbEstado, "Seleccione el Estado: 1 Es Activo y 0 Inactivo");
         }
+        //Cargar Datos de Marca
         private void cargarMarca()
         {
             try
@@ -34,7 +49,8 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
                 OdbcDataReader mostrarMuni = comando.ExecuteReader();
                 while (mostrarMuni.Read())
                 {
-                    comboBox1.Items.Add(mostrarMuni.GetInt32(0));
+                    cmbMarca.Items.Add(mostrarMuni.GetInt32(0));
+                    cmbNombre.Items.Add(mostrarMuni.GetString(1));    
                 }
             }
             catch (Exception ex)
@@ -43,6 +59,7 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
                 Console.WriteLine(ex.Message);
             }
         }
+        //Navegador
         private void navegador1_Load(object sender, EventArgs e)
         {
             List<string> CamposTabla = new List<string>();
@@ -85,6 +102,48 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
             navegador1.procCargar();
           //  navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
           //  navegador1.ruta = "Ayuda-Modulo.html";
+        }
+        //Cerrar Ventana
+        private void frmVehiculo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult drResultadoMensaje;
+            drResultadoMensaje = MessageBox.Show("¿Realmente desea salir?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (drResultadoMensaje == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+        //Cambiar Indice
+        private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbMarca.SelectedIndex = cmbNombre.SelectedIndex;
+        }
+        //Cambiar Indice
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbNombre.SelectedIndex = cmbMarca.SelectedIndex;
+        }
+
+        private void cmbMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
