@@ -1,6 +1,6 @@
-﻿using CapaControlador.ControlProcesos;
-using CapaModelo;
-using CapaModelo.ClasesProcesos;
+﻿using CapaControladorModuloSCM.ControlProcesos;
+using CapaModeloModuloSCM;
+using CapaModeloModuloSCM.ClasesProcesos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVista.Procesos
+namespace CapaVistaModuloSCM.Procesos
 {
     public partial class frmCompras : Form
     {

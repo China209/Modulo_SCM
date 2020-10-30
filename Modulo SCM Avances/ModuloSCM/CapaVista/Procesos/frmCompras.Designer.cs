@@ -1,4 +1,4 @@
-﻿namespace CapaVista.Procesos
+﻿namespace CapaVistaModuloSCM.Procesos
 {
     partial class frmCompras
     {
@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlInferior = new System.Windows.Forms.Panel();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
             this.gbxTipoOperacion = new System.Windows.Forms.GroupBox();
             this.rbtnPedido = new System.Windows.Forms.RadioButton();
@@ -53,8 +55,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.tmrTotal = new System.Windows.Forms.Timer(this.components);
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.lblHora = new System.Windows.Forms.Label();
             this.tmrHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.pnlInferior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
@@ -74,6 +74,30 @@
             this.pnlInferior.Name = "pnlInferior";
             this.pnlInferior.Size = new System.Drawing.Size(1391, 39);
             this.pnlInferior.TabIndex = 8;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(569, 9);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(56, 20);
+            this.lblFecha.TabIndex = 7;
+            this.lblFecha.Text = "Fecha";
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHora.AutoSize = true;
+            this.lblHora.Location = new System.Drawing.Point(755, 9);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(47, 20);
+            this.lblHora.TabIndex = 6;
+            this.lblHora.Text = "Hora";
             // 
             // pnlCuerpo
             // 
@@ -172,7 +196,7 @@
             this.txtCantidad,
             this.txtPrecioUnitario,
             this.txtSubtotal});
-            this.dgvCompras.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvCompras.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvCompras.Location = new System.Drawing.Point(26, 38);
             this.dgvCompras.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCompras.Name = "dgvCompras";
@@ -243,6 +267,7 @@
             // 
             // dtpFechaCompra
             // 
+            this.dtpFechaCompra.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
             this.dtpFechaCompra.Location = new System.Drawing.Point(689, 50);
             this.dtpFechaCompra.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFechaCompra.Name = "dtpFechaCompra";
@@ -323,30 +348,6 @@
             // tmrTotal
             // 
             this.tmrTotal.Tick += new System.EventHandler(this.tmrTotal_Tick);
-            // 
-            // lblFecha
-            // 
-            this.lblFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(569, 9);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(56, 20);
-            this.lblFecha.TabIndex = 7;
-            this.lblFecha.Text = "Fecha";
-            // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHora.AutoSize = true;
-            this.lblHora.Location = new System.Drawing.Point(755, 9);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(47, 20);
-            this.lblHora.TabIndex = 6;
-            this.lblHora.Text = "Hora";
             // 
             // tmrHoraFecha
             // 

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaModelo
+namespace CapaModeloModuloSCM
 {
     public class clsSentencia
     {

@@ -1,11 +1,14 @@
-﻿using CapaModelo;
-using CapaModelo.ClasesProcesos;
+﻿/*
+ Clase Controlador de Movimientos de Inventario
+ */
+using CapaModeloModuloSCM;
+using CapaModeloModuloSCM.ClasesProcesos;
 using System;
 using System.Data;
 using System.Data.Odbc;
 using System.Windows.Forms;
 
-namespace CapaControlador.ControlProcesos
+namespace CapaControladorModuloSCM.ControlProcesos
 {
     public class clsControladorMovimientosInventarios
     {
@@ -14,40 +17,21 @@ namespace CapaControlador.ControlProcesos
         private DataTable tabla; // variable tipo DataTable 
         private OdbcDataAdapter datos; // Variable OdbcDataAdapter
 
-        public DataTable obtenerTodosDatos()
-        {
-            try
-            {
-                string sComando = "SELECT t.nombre_tipo_movimiento as 'Tipo de Movimiento', m.fecha_movimiento_inventario as 'Fecha', p.nombre_producto as 'Producto', d.cantidad as 'Cantidad', d.origen as 'Origen', d.destino as 'Destino' from tipo_movimiento t inner join movimiento_inventario m on t.pk_id_tipo_movimiento=m.fk_id_tipo_movimiento inner join"+
-                                   " movimiento_inventario_detalle d on d.fk_id_movimiento_inventario = m.pk_id_movimiento_inventario inner join productoscm p on d.fk_id_producto = p.pk_id_producto where p.estado_producto = 1; ";
-                datos = new OdbcDataAdapter(sComando, conexion.conexion());
-                tabla = new DataTable();
-                datos.Fill(tabla);
-                return tabla;
-            
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener datos");
-                Console.WriteLine(ex.Message);
-                return null;
-            }
-        }
-
+        
+        //Obtener Datos con los que han de visualizar los combobox
         public DataTable obtenerCamposCombobox(string sCampo1, string sCampo2, string sTabla, string sEstado)
         {
             try
             {
-                if (sEstado.Length==0)
+                if (sEstado.Length==0)//Si no llega a recibir un estado como campo
                 {
-
                     string sComando = string.Format("SELECT " + sCampo1 + " ," + sCampo2 + " FROM " + sTabla);
                     datos = new OdbcDataAdapter(sComando, conexion.conexion());
                     tabla = new DataTable();
                     datos.Fill(tabla);
                     return tabla;
                 }
-                else if(sEstado.Length!=0)
+                else if(sEstado.Length!=0)//Si existe el campo estado
                 {
                     string sComando = string.Format("SELECT " + sCampo1 + " ," + sCampo2 + " FROM " + sTabla + " WHERE " + sEstado + "=1");
                     datos = new OdbcDataAdapter(sComando, conexion.conexion());
@@ -64,6 +48,7 @@ namespace CapaControlador.ControlProcesos
                 return null;
             }
         }
+        //Obtener el destino y ruta que sean iguales al id que se ingreso, se realiza la respectiva busqueda
         public string[] obtenerCamposRuta(int iID)
         {
             string[] datos=new string[2];
@@ -89,7 +74,7 @@ namespace CapaControlador.ControlProcesos
                 return null;
             }
         }
-
+        //Se generan ID automatico
         public int generarID(string sTabla, string sCampo)
         {
             OdbcConnection con = conexion.conexion();
@@ -109,6 +94,7 @@ namespace CapaControlador.ControlProcesos
                 return 0;
             }
         }
+        //Insertar datos a tablas
         public void insertarMovimientos(clsMantenimientoInventario movimiento)
         {
             OdbcConnection con = conexion.conexion();
