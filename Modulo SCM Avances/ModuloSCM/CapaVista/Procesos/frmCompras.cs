@@ -32,7 +32,10 @@ namespace CapaVistaModuloSCM.Procesos
         {
             InitializeComponent();
             BloquearComponentes();
-            
+            //Tooltips
+            tltToolTip.SetToolTip(rbtnCompra, "Habilita Ingreso de Órden de Compra");
+            tltToolTip.SetToolTip(rbtnPedido, "Habilita Ingreso de Órden de Pedidos a Fábrica");
+            tltToolTip.SetToolTip(btnGuardar, "Ingrese los Datos de la Órden");            
         }
         //Bloquea componentes
         private void BloquearComponentes()

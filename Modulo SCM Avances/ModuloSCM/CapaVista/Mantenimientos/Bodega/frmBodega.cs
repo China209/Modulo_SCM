@@ -100,8 +100,8 @@ namespace CapaVistaModuloSCM.Mantenimientos.Bodega
             navegador1.DatosActualizar = dgvBodega;
             navegador1.procActualizarData();
             navegador1.procCargar();
-    //        navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
-     //       navegador1.ruta = "Ayuda-Modulo.html";
+            navegador1.ayudaRuta = "AyudasModuloSCM/AyudasSCMASII.chm";
+            navegador1.ruta = "Bodega.html";
         }
         //Cerrar la ventana
         private void frmBodega_FormClosing(object sender, FormClosingEventArgs e)

@@ -60,8 +60,8 @@ namespace CapaVistaModuloSCM.Mantenimientos.Marca
             navegador1.DatosActualizar = dgvMarcaVista;
             navegador1.procActualizarData();
             navegador1.procCargar();
-    //       navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
-    //        navegador1.ruta = "Ayuda-Modulo.html";
+           navegador1.ayudaRuta = "AyudasModuloSCM/AyudasSCMASII.chm";
+            navegador1.ruta = "Marca.html";
         }
         //Cerrar Ventana
         private void frmMarca_FormClosing(object sender, FormClosingEventArgs e)

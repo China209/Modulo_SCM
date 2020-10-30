@@ -61,6 +61,12 @@
     <Compile Include="Mantenimientos\Bodega\frmBodega.Designer.cs">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\Correo Proveedor\frmCorreoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Correo Proveedor\frmCorreoProveedor.designer.cs">
+      <DependentUpon>frmCorreoProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\Encargado Bodega\frmEncargadoBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,30 @@
     </Compile>
     <Compile Include="Mantenimientos\Marca\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Pais\frmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Pais\frmPais.designer.cs">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Proveedor\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Proveedor\frmProveedor.designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Ruta\frmRuta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Ruta\frmRuta.designer.cs">
+      <DependentUpon>frmRuta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\Telefono Proveedor\frmTelefonoProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Telefono Proveedor\frmTelefonoProveedor.designer.cs">
+      <DependentUpon>frmTelefonoProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\Vehiculo\frmVehiculo.cs">
       <SubType>Form</SubType>
@@ -108,11 +138,26 @@
     <EmbeddedResource Include="Mantenimientos\Bodega\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Correo Proveedor\frmCorreoProveedor.resx">
+      <DependentUpon>frmCorreoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Encargado Bodega\frmEncargadoBodega.resx">
       <DependentUpon>frmEncargadoBodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Marca\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Pais\frmPais.resx">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Proveedor\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Ruta\frmRuta.resx">
+      <DependentUpon>frmRuta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Telefono Proveedor\frmTelefonoProveedor.resx">
+      <DependentUpon>frmTelefonoProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Vehiculo\frmVehiculo.resx">
       <DependentUpon>frmVehiculo.cs</DependentUpon>

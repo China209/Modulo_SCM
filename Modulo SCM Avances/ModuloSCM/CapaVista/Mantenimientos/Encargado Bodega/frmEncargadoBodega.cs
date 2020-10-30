@@ -118,8 +118,8 @@ namespace CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega
             navegador1.DatosActualizar = dgvEncargadoDatos;
             navegador1.procActualizarData();
             navegador1.procCargar();
-       //     navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
-        //    navegador1.ruta = "Ayuda-Modulo.html";
+            navegador1.ayudaRuta = "AyudasModuloSCM/AyudasSCMASII.chm";
+            navegador1.ruta = "EncargadoBodega.html";
         }
         //Cerrar Ventana
         private void frmEncargadoBodega_FormClosing(object sender, FormClosingEventArgs e)

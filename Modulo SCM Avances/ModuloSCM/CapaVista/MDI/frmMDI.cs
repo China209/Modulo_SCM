@@ -1,4 +1,5 @@
-﻿using CapaVistaModuloSCM.Mantenimientos.Bodega;
+﻿using CapaVistaModuloSCM.Mantenimientos;
+using CapaVistaModuloSCM.Mantenimientos.Bodega;
 using CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega;
 using CapaVistaModuloSCM.Mantenimientos.Marca;
 using CapaVistaModuloSCM.Mantenimientos.Vehiculo;
@@ -107,7 +108,7 @@ namespace CapaVistaModuloSCM.MDI
             lblHora.Text = DateTime.Now.ToLongTimeString();
             lblFecha.Text = DateTime.Now.ToLongDateString();
         }
-
+        //Mostrar Compras y Pedidos
         private void comprasYPedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsVistaBitacora bit = new clsVistaBitacora();
@@ -123,6 +124,96 @@ namespace CapaVistaModuloSCM.MDI
             {
                 MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
             }
+        }
+        //Mostrar Proveedores
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2307", textBox1.Text) == 1)
+            {
+                bit.user(textBox1.Text);
+                frmProveedor Bancos = new frmProveedor(textBox1.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Mostrar Correo Proveedor
+        private void correoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2309", textBox1.Text) == 1)
+            {
+                bit.user(textBox1.Text);
+                frmCorreoProveedor Bancos = new frmCorreoProveedor(textBox1.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Mostrar Telefono
+        private void teléfonoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2308", textBox1.Text) == 1)
+            {
+                bit.user(textBox1.Text);
+                frmTelefonoProveedor Bancos = new frmTelefonoProveedor(textBox1.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Mostrar Pais
+        private void paisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2310", textBox1.Text) == 1)
+            {
+                bit.user(textBox1.Text);
+                frmPais Bancos = new frmPais(textBox1.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Mostrar Ruta
+        private void rutaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2306", textBox1.Text) == 1)
+            {
+                bit.user(textBox1.Text);
+                frmRuta Bancos = new frmRuta(textBox1.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Ayuda MDI
+        private void ayudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudasModuloSCM/AyudasSCMASII.chm", "MDI.html");
         }
     }
 }

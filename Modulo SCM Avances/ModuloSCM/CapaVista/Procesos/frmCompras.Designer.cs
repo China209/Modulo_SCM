@@ -57,6 +57,7 @@
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.tmrTotal = new System.Windows.Forms.Timer(this.components);
             this.tmrHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.tltToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlInferior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             this.gbxTipoOperacion.SuspendLayout();
@@ -355,6 +356,11 @@
             this.tmrHoraFecha.Enabled = true;
             this.tmrHoraFecha.Tick += new System.EventHandler(this.tmrHoraFecha_Tick);
             // 
+            // tltToolTip
+            // 
+            this.tltToolTip.IsBalloon = true;
+            this.tltToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -415,5 +421,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer tmrHoraFecha;
+        private System.Windows.Forms.ToolTip tltToolTip;
     }
 }

@@ -100,8 +100,8 @@ namespace CapaVistaModuloSCM.Mantenimientos.Vehiculo
             navegador1.DatosActualizar = dgvVehiculo;
             navegador1.procActualizarData();
             navegador1.procCargar();
-          //  navegador1.ayudaRuta = "AyudasSeguridad/Modulo/ayuda.chm";
-          //  navegador1.ruta = "Ayuda-Modulo.html";
+            navegador1.ayudaRuta = "AyudasModuloSCM/AyudasSCMASII.chm";
+            navegador1.ruta = "Vehiculo.html";
         }
         //Cerrar Ventana
         private void frmVehiculo_FormClosing(object sender, FormClosingEventArgs e)

@@ -61,3 +61,8 @@ C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_Modul
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Bodega.frmBodega.resources
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Vehiculo.frmVehiculo.resources
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Encargado_Bodega.frmEncargadoBodega.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.frmCorreoProveedor.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.frmPais.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.frmProveedor.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.frmRuta.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.frmTelefonoProveedor.resources
