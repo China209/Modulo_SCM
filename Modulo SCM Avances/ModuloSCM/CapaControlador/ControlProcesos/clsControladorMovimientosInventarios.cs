@@ -1,11 +1,14 @@
-﻿using CapaModelo;
-using CapaModelo.ClasesProcesos;
+﻿/*
+ Clase Controlador de Movimientos de Inventario
+ */
+using CapaModeloModuloSCM;
+using CapaModeloModuloSCM.ClasesProcesos;
 using System;
 using System.Data;
 using System.Data.Odbc;
 using System.Windows.Forms;
 
-namespace CapaControlador.ControlProcesos
+namespace CapaControladorModuloSCM.ControlProcesos
 {
     public class clsControladorMovimientosInventarios
     {
@@ -15,12 +18,12 @@ namespace CapaControlador.ControlProcesos
         private OdbcDataAdapter datos; // Variable OdbcDataAdapter
 
         
-
+        //Obtener Datos con los que han de visualizar los combobox
         public DataTable obtenerCamposCombobox(string sCampo1, string sCampo2, string sTabla, string sEstado)
         {
             try
             {
-                if (sEstado.Length==0)
+                if (sEstado.Length==0)//Si no llega a recibir un estado como campo
                 {
                     string sComando = string.Format("SELECT " + sCampo1 + " ," + sCampo2 + " FROM " + sTabla);
                     datos = new OdbcDataAdapter(sComando, conexion.conexion());
@@ -28,7 +31,7 @@ namespace CapaControlador.ControlProcesos
                     datos.Fill(tabla);
                     return tabla;
                 }
-                else if(sEstado.Length!=0)
+                else if(sEstado.Length!=0)//Si existe el campo estado
                 {
                     string sComando = string.Format("SELECT " + sCampo1 + " ," + sCampo2 + " FROM " + sTabla + " WHERE " + sEstado + "=1");
                     datos = new OdbcDataAdapter(sComando, conexion.conexion());
@@ -45,6 +48,7 @@ namespace CapaControlador.ControlProcesos
                 return null;
             }
         }
+        //Obtener el destino y ruta que sean iguales al id que se ingreso, se realiza la respectiva busqueda
         public string[] obtenerCamposRuta(int iID)
         {
             string[] datos=new string[2];
@@ -70,7 +74,7 @@ namespace CapaControlador.ControlProcesos
                 return null;
             }
         }
-
+        //Se generan ID automatico
         public int generarID(string sTabla, string sCampo)
         {
             OdbcConnection con = conexion.conexion();
@@ -90,6 +94,7 @@ namespace CapaControlador.ControlProcesos
                 return 0;
             }
         }
+        //Insertar datos a tablas
         public void insertarMovimientos(clsMantenimientoInventario movimiento)
         {
             OdbcConnection con = conexion.conexion();

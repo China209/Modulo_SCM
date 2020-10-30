@@ -1,6 +1,8 @@
-﻿using CapaControlador.ControlProcesos;
-using CapaModelo;
-using CapaModelo.ClasesProcesos;
+﻿/*
+ *Formulario de Gestión de Movimientos de Inventarios 
+ */
+using CapaControladorModuloSCM.ControlProcesos;
+using CapaModeloModuloSCM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +13,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaVista.Procesos
+namespace CapaVistaModuloSCM.Procesos
 {
     public partial class frmMovimientoInventarios : Form
     {
+        //Variables Globales
         private clsConexion conexion = new clsConexion();
         private clsControladorMovimientosInventarios movimientosInventarios = new clsControladorMovimientosInventarios();
         public frmMovimientoInventarios()
@@ -24,6 +27,7 @@ namespace CapaVista.Procesos
             cargarTipoMovimientos();
             cargarVehiculos();
         }
+        //Cargar Rutas
         private void cargarRutas()
         {
             cmbRuta.ValueMember = "pk_id_ruta";
@@ -32,6 +36,7 @@ namespace CapaVista.Procesos
             cmbRuta.Refresh();
             cmbRuta.SelectedIndex = -1;
         }
+        //Cargar Tipos de Movimientos
         private void cargarTipoMovimientos()
         {
             cmbTipo.ValueMember = "pk_id_tipo_movimiento";
@@ -40,6 +45,7 @@ namespace CapaVista.Procesos
             cmbTipo.Refresh();
             cmbTipo.SelectedIndex = -1;
         }
+        //Cargar datos de Vehiculos
         private void cargarVehiculos()
         {
             cmbVehiculo.ValueMember = "pk_id_vehiculo";
@@ -55,7 +61,7 @@ namespace CapaVista.Procesos
             cmbProducto.DisplayMember = "nombre_producto";
             cmbProducto.DataSource = movimientosInventarios.obtenerCamposCombobox("pk_id_producto", "nombre_producto", "productoscm", "estado_producto");
         }
-
+        //Obtiene la ruta
         private void cmbRuta_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] ruta_campos = new string[2];

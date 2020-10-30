@@ -1,13 +1,17 @@
-﻿using System;
+﻿/*
+ Clase de Pedido Detalle
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaModelo.ClasesProcesos
+namespace CapaModeloModuloSCM.ClasesProcesos
 {
     public class clsPedidoDetalle
     {
+        //Datos del Pedido
         private int idPedido;
         private int codLinea;
         private int idProducto;

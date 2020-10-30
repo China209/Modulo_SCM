@@ -1,15 +1,14 @@
-﻿using CapaModelo;
-using CapaModelo.ClasesProcesos;
+﻿/*
+ Clase controlador de Gestion de Compras y Pedidos
+*/
+using CapaModeloModuloSCM;
+using CapaModeloModuloSCM.ClasesProcesos;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.Odbc;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaControlador.ControlProcesos
+namespace CapaControladorModuloSCM.ControlProcesos
 {
     public class clsControladorGestionCompraPedido
     {
@@ -18,7 +17,7 @@ namespace CapaControlador.ControlProcesos
         private DataTable tabla; // variable tipo DataTable 
         private OdbcDataAdapter datos; // Variable OdbcDataAdapter
 
-
+        //Insertar datos de encabezado factura
         public void InsertarFactura(clsCompraEncabezado compraEncabezado)
         {
             OdbcConnection con = conexion.conexion();
@@ -53,6 +52,7 @@ namespace CapaControlador.ControlProcesos
             }
 
         }
+        //Insertar datos del encabezado del pedido
         public void InsertarPedidoE(clsPedidoEncabezado pedidoEncabezado)
         {
             OdbcConnection con = conexion.conexion();
@@ -87,6 +87,7 @@ namespace CapaControlador.ControlProcesos
             }
 
         }
+        //Generar id automaticos
         public int generarID(string sTabla, string sCampo)
         {
             OdbcConnection con = conexion.conexion();
@@ -106,6 +107,7 @@ namespace CapaControlador.ControlProcesos
                 return 0;
             }
         }
+        //Insertar a tabla de detalle pedido
         public void InsertarDetallePedido(clsPedidoDetalle pedidoDetalle)
         {
             OdbcConnection con = conexion.conexion();
@@ -141,6 +143,7 @@ namespace CapaControlador.ControlProcesos
                 MessageBox.Show("Error transaccion pedido detalle", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Insertar a tabla detalle de compras
         public void InsertarDetalleFactura(clsCompraDetalle compraDetalle)
         {
             OdbcConnection con = conexion.conexion();
@@ -176,6 +179,7 @@ namespace CapaControlador.ControlProcesos
                 MessageBox.Show("Error transaccion compras detalle", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Obtener datos para visualizacion
         public DataTable obtenerDatos(string Campo1, string Campo2, string Tabla, string Estado)
         {
             try

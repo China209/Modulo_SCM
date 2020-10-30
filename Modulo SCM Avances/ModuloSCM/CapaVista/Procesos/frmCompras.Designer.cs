@@ -1,4 +1,4 @@
-﻿namespace CapaVista.Procesos
+﻿namespace CapaVistaModuloSCM.Procesos
 {
     partial class frmCompras
     {
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
             this.pnlInferior = new System.Windows.Forms.Panel();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.tmrTotal = new System.Windows.Forms.Timer(this.components);
             this.tmrHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.tltToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlInferior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             this.gbxTipoOperacion.SuspendLayout();
@@ -354,6 +356,11 @@
             this.tmrHoraFecha.Enabled = true;
             this.tmrHoraFecha.Tick += new System.EventHandler(this.tmrHoraFecha_Tick);
             // 
+            // tltToolTip
+            // 
+            this.tltToolTip.IsBalloon = true;
+            this.tltToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -363,12 +370,13 @@
             this.Controls.Add(this.pnlCuerpo);
             this.Controls.Add(this.pnlSuperior);
             this.Font = new System.Drawing.Font("Rockwell", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2401 - Registro de Compras y Pedidos";
+            this.Text = "2316 - Registro de Compras y Pedidos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCompras_FormClosing);
             this.pnlInferior.ResumeLayout(false);
             this.pnlInferior.PerformLayout();
@@ -413,5 +421,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer tmrHoraFecha;
+        private System.Windows.Forms.ToolTip tltToolTip;
     }
 }

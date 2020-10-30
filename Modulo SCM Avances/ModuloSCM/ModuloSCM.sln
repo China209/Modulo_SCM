@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaVista", "CapaVista\CapaVista.csproj", "{B66849A7-DFF4-4AD9-8516-92C75F46690C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaVistaModuloSCM", "CapaVista\CapaVistaModuloSCM.csproj", "{B66849A7-DFF4-4AD9-8516-92C75F46690C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaModelo", "CapaModelo\CapaModelo.csproj", "{9F3CC787-7CA9-47B0-8226-EDA3A63768A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaModeloModuloSCM", "CapaModelo\CapaModeloModuloSCM.csproj", "{9F3CC787-7CA9-47B0-8226-EDA3A63768A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaControlador", "CapaControlador\CapaControlador.csproj", "{A9C03231-34ED-4392-B799-9DE48D7E7366}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaControladorModuloSCM", "CapaControlador\CapaControladorModuloSCM.csproj", "{A9C03231-34ED-4392-B799-9DE48D7E7366}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
