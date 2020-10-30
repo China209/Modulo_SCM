@@ -1,0 +1,5 @@
+C:\Users\Laptop\source\repos\CapaVistaMuduloSCM\CapaModelo\bin\Debug\CapaModelo.dll
+C:\Users\Laptop\source\repos\CapaVistaMuduloSCM\CapaModelo\bin\Debug\CapaModelo.pdb
+C:\Users\Laptop\source\repos\CapaVistaMuduloSCM\CapaModelo\obj\Debug\CapaModelo.csproj.CoreCompileInputs.cache
+C:\Users\Laptop\source\repos\CapaVistaMuduloSCM\CapaModelo\obj\Debug\CapaModelo.dll
+C:\Users\Laptop\source\repos\CapaVistaMuduloSCM\CapaModelo\obj\Debug\CapaModelo.pdb
