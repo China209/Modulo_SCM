@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLineaProducto));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -145,15 +146,19 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.2F);
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(187, 373);
             this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(195, 28);
             this.cmbEstado.TabIndex = 26;
             this.cmbEstado.Tag = "estado_linea_producto";
-            this.cmbEstado.Text = "1";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvLinea
             // 
@@ -187,12 +192,13 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmLineaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2301-LineaProducto";
+            this.Text = "2301-Mantenimiento Linea Producto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLineaProducto_FormClosing);
             this.pnlNavegador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLinea)).EndInit();

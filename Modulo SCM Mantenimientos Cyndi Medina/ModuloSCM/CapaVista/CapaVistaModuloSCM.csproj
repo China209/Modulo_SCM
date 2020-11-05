@@ -139,6 +139,12 @@
     <Compile Include="Mantenimientos\Telefono Proveedor\frmTelefonoProveedor.designer.cs">
       <DependentUpon>frmTelefonoProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\Tipo de Movimiento\frmTipoMovimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\Tipo de Movimiento\frmTipoMovimiento.Designer.cs">
+      <DependentUpon>frmTipoMovimiento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\Vehiculo\frmVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Telefono Proveedor\frmTelefonoProveedor.resx">
       <DependentUpon>frmTelefonoProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\Tipo de Movimiento\frmTipoMovimiento.resx">
+      <DependentUpon>frmTipoMovimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\Vehiculo\frmVehiculo.resx">
       <DependentUpon>frmVehiculo.cs</DependentUpon>

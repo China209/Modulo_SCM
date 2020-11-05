@@ -26,7 +26,7 @@ namespace CapaVistaModuloSCM.Procesos
         private clsPedidoEncabezado pedidoEncabezado;
         private clsPedidoDetalle pedidoDetalle;
         private clsConexion conexion=new clsConexion();
-        private int IDProducto, Cantidad;
+        private int IDProducto, Cantidad, estadoProceso;
         private double Precio, SubTotal, TotalValor;
         public frmCompras()
         {
@@ -44,6 +44,7 @@ namespace CapaVistaModuloSCM.Procesos
             dtpFechaCompra.Enabled = false;
             cmbProveedor.Enabled = false;
             lblValorTotal.Visible = false;
+            cmbEstadoProceso.Enabled = false;
         }
 
         //Carga datos al combobox producto, dentro del grid y fuera de el para compras
@@ -78,6 +79,7 @@ namespace CapaVistaModuloSCM.Procesos
             clsCompraEncabezado auxMantenimiento = new clsCompraEncabezado();
             auxMantenimiento.IdCompra = int.Parse(txtCodigo.Text);
             auxMantenimiento.IdProveedor = int.Parse(cmbProveedor.SelectedValue.ToString());
+            auxMantenimiento.EstadoProceso = estadoProceso;
             auxMantenimiento.FechaCompra1 = dtFecha;
             auxMantenimiento.TotalCompra = Total;
             auxMantenimiento.Estado1 = 1;
@@ -104,6 +106,7 @@ namespace CapaVistaModuloSCM.Procesos
             clsPedidoEncabezado auxMantenimiento = new clsPedidoEncabezado();
             auxMantenimiento.IdPedido = int.Parse(txtCodigo.Text);
             auxMantenimiento.IdFabrica = int.Parse(cmbProveedor.SelectedValue.ToString());
+            auxMantenimiento.EstadoProceso = estadoProceso;
             auxMantenimiento.FechaPedido1 = dtFecha;
             auxMantenimiento.TotalPedido = Total;
             auxMantenimiento.Estado1 = 1;
@@ -135,6 +138,7 @@ namespace CapaVistaModuloSCM.Procesos
                 dgvCompras.Enabled = true;
                 dtpFechaCompra.Enabled = true;
                 cmbProveedor.Enabled = true;
+                cmbEstadoProceso.Enabled = true;
                 lblValorTotal.Visible = true;
             }
         }
@@ -151,6 +155,7 @@ namespace CapaVistaModuloSCM.Procesos
                 dgvCompras.Enabled = true;
                 dtpFechaCompra.Enabled = true;
                 cmbProveedor.Enabled = true;
+                cmbEstadoProceso.Enabled = true;
                 lblValorTotal.Visible = true;
             }
         }
@@ -178,6 +183,7 @@ namespace CapaVistaModuloSCM.Procesos
             cmbProveedor.SelectedIndex = -1;
             txtCodigo.Text = "";
             dtpFechaCompra.Value = DateTime.Now;
+            cmbEstadoProceso.SelectedIndex = 0;
             foreach (DataGridViewRow row in dgvCompras.Rows)
             {
                 row.Cells["cmbProducto"].Value = null;
@@ -249,6 +255,25 @@ namespace CapaVistaModuloSCM.Procesos
                 e.Cancel = true;
             }
         }
+        //Obtener estado del proceso
+        private void cmbEstadoProceso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbEstadoProceso.SelectedItem.ToString() == "Ingreso de Órden")
+            {
+                estadoProceso = 0;
+                MessageBox.Show(estadoProceso+" Proceso estado");
+            }else if (cmbEstadoProceso.SelectedItem.ToString() == "Ejecución de Órden")
+            {
+                estadoProceso = 1;
+                MessageBox.Show(estadoProceso + " Proceso estado");
+            }
+            else if (cmbEstadoProceso.SelectedItem.ToString() == "Recepción de Órden")
+            {
+                estadoProceso = 2;
+                MessageBox.Show(estadoProceso + " Proceso estado");
+            }
+        }
+
         //Sumar Total 
         private double SumarColumnas()
         {

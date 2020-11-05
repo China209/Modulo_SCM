@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoriaProducto));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -129,13 +130,17 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(225, 466);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(199, 28);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.Tag = "estado_categoria_producto";
-            this.cmbEstado.Text = "1";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvCategoriaProducto
             // 
@@ -169,12 +174,13 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Rockwell", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCategoriaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2302-Categoria";
+            this.Text = "2302- Mantenimientp Categoria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCategoriaProducto_FormClosing);
             this.pnlNavegador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoriaProducto)).EndInit();

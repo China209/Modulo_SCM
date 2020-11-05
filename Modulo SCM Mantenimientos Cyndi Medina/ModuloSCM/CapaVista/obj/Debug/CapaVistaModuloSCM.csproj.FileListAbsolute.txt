@@ -72,3 +72,4 @@ C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_Modul
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Linea_Producto.frmLineaProducto.resources
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Municipio.frmMunicipio.resources
 C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Producto.frmProducto.resources
+C:\Users\cypam\OneDrive\Documents\Visual Studio 2019\Proyectos\ProyectoCLC_ModuloSCM\PrototipoSCM\ModuloSCM\CapaVista\obj\Debug\CapaVistaModuloSCM.Mantenimientos.Tipo_de_Movimiento.frmTipoMovimiento.resources

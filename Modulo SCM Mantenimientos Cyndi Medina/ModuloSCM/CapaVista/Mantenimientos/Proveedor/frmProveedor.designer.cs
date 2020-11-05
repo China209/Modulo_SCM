@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedor));
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
@@ -131,6 +132,7 @@
             // 
             // cmbPais
             // 
+            this.cmbPais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPais.Enabled = false;
             this.cmbPais.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPais.FormattingEnabled = true;
@@ -140,6 +142,7 @@
             this.cmbPais.TabIndex = 8;
             this.cmbPais.Tag = "fk_id_pais";
             this.cmbPais.SelectedIndexChanged += new System.EventHandler(this.cmbPais_SelectedIndexChanged);
+            this.cmbPais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPais_KeyPress);
             this.cmbPais.MouseHover += new System.EventHandler(this.cmbPais_MouseHolver);
             // 
             // txtRazon
@@ -174,13 +177,18 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(257, 437);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(191, 28);
             this.cmbEstado.TabIndex = 12;
             this.cmbEstado.Tag = "estado_proveedor";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             this.cmbEstado.MouseHover += new System.EventHandler(this.cmbEstado_MouseHover);
             // 
             // dgvProveedor
@@ -204,6 +212,7 @@
             // 
             // cmbMostrar
             // 
+            this.cmbMostrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMostrar.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMostrar.FormattingEnabled = true;
             this.cmbMostrar.Location = new System.Drawing.Point(327, 216);
@@ -233,11 +242,12 @@
             this.Controls.Add(this.lblRazon);
             this.Controls.Add(this.lblPais);
             this.Controls.Add(this.lblCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2307 - Proveedor";
+            this.Text = "2307 - Mantenimiento de Proveedor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProveedor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.panel1.ResumeLayout(false);

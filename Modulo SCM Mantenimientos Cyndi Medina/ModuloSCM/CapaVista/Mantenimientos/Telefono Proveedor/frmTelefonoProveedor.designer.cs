@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTelefonoProveedor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             // 
             // cmbIdProveedor
             // 
+            this.cmbIdProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdProveedor.Enabled = false;
             this.cmbIdProveedor.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbIdProveedor.FormattingEnabled = true;
@@ -115,6 +117,7 @@
             this.cmbIdProveedor.TabIndex = 5;
             this.cmbIdProveedor.Tag = "fk_id_proveedor";
             this.cmbIdProveedor.SelectedIndexChanged += new System.EventHandler(this.cmbIdProveedor_SelectedIndexChanged);
+            this.cmbIdProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdProveedor_KeyPress);
             this.cmbIdProveedor.MouseHover += new System.EventHandler(this.cmbIdProveedor_MouseHover);
             // 
             // txtTelefono
@@ -139,13 +142,18 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(181, 352);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(173, 28);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.Tag = "estado_telefono_proveedor";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             this.cmbEstado.MouseHover += new System.EventHandler(this.cmbEstado_MouseHover);
             // 
             // dgvTelefonoProveedor
@@ -160,6 +168,7 @@
             // 
             // cmbMostrar
             // 
+            this.cmbMostrar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMostrar.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMostrar.FormattingEnabled = true;
             this.cmbMostrar.Location = new System.Drawing.Point(254, 254);
@@ -185,11 +194,12 @@
             this.Controls.Add(this.lblIdProveedor);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmTelefonoProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2308 - Telefono Proveedor";
+            this.Text = "2308 - Mantenimiento de Telefono Proveedor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTelefonoProveedor_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonoProveedor)).EndInit();

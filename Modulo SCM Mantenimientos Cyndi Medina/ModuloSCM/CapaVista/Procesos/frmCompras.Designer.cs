@@ -47,6 +47,8 @@
             this.txtSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.gbxEncabezado = new System.Windows.Forms.GroupBox();
+            this.cmbEstadoProceso = new System.Windows.Forms.ComboBox();
+            this.lblEstadoProceso = new System.Windows.Forms.Label();
             this.dtpFechaCompra = new System.Windows.Forms.DateTimePicker();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -123,7 +125,7 @@
             this.gbxTipoOperacion.Controls.Add(this.rbtnCompra);
             this.gbxTipoOperacion.Location = new System.Drawing.Point(30, 32);
             this.gbxTipoOperacion.Name = "gbxTipoOperacion";
-            this.gbxTipoOperacion.Size = new System.Drawing.Size(204, 121);
+            this.gbxTipoOperacion.Size = new System.Drawing.Size(204, 167);
             this.gbxTipoOperacion.TabIndex = 2;
             this.gbxTipoOperacion.TabStop = false;
             this.gbxTipoOperacion.Text = "Tipo de Operación";
@@ -131,7 +133,7 @@
             // rbtnPedido
             // 
             this.rbtnPedido.AutoSize = true;
-            this.rbtnPedido.Location = new System.Drawing.Point(39, 79);
+            this.rbtnPedido.Location = new System.Drawing.Point(39, 103);
             this.rbtnPedido.Name = "rbtnPedido";
             this.rbtnPedido.Size = new System.Drawing.Size(85, 24);
             this.rbtnPedido.TabIndex = 14;
@@ -143,7 +145,7 @@
             // rbtnCompra
             // 
             this.rbtnCompra.AutoSize = true;
-            this.rbtnCompra.Location = new System.Drawing.Point(39, 37);
+            this.rbtnCompra.Location = new System.Drawing.Point(39, 48);
             this.rbtnCompra.Name = "rbtnCompra";
             this.rbtnCompra.Size = new System.Drawing.Size(94, 24);
             this.rbtnCompra.TabIndex = 13;
@@ -176,9 +178,9 @@
             // gbxDetalle
             // 
             this.gbxDetalle.Controls.Add(this.dgvCompras);
-            this.gbxDetalle.Location = new System.Drawing.Point(30, 176);
+            this.gbxDetalle.Location = new System.Drawing.Point(30, 223);
             this.gbxDetalle.Name = "gbxDetalle";
-            this.gbxDetalle.Size = new System.Drawing.Size(1327, 433);
+            this.gbxDetalle.Size = new System.Drawing.Size(1327, 386);
             this.gbxDetalle.TabIndex = 12;
             this.gbxDetalle.TabStop = false;
             this.gbxDetalle.Text = "Detalle de Gestión";
@@ -199,12 +201,12 @@
             this.txtPrecioUnitario,
             this.txtSubtotal});
             this.dgvCompras.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.dgvCompras.Location = new System.Drawing.Point(26, 38);
+            this.dgvCompras.Location = new System.Drawing.Point(26, 49);
             this.dgvCompras.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.RowHeadersWidth = 51;
             this.dgvCompras.RowTemplate.Height = 24;
-            this.dgvCompras.Size = new System.Drawing.Size(1264, 376);
+            this.dgvCompras.Size = new System.Drawing.Size(1264, 318);
             this.dgvCompras.TabIndex = 1;
             this.dgvCompras.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompras_CellEndEdit);
             // 
@@ -251,6 +253,8 @@
             // 
             // gbxEncabezado
             // 
+            this.gbxEncabezado.Controls.Add(this.cmbEstadoProceso);
+            this.gbxEncabezado.Controls.Add(this.lblEstadoProceso);
             this.gbxEncabezado.Controls.Add(this.dtpFechaCompra);
             this.gbxEncabezado.Controls.Add(this.cmbProveedor);
             this.gbxEncabezado.Controls.Add(this.txtCodigo);
@@ -262,10 +266,34 @@
             this.gbxEncabezado.Margin = new System.Windows.Forms.Padding(5);
             this.gbxEncabezado.Name = "gbxEncabezado";
             this.gbxEncabezado.Padding = new System.Windows.Forms.Padding(5);
-            this.gbxEncabezado.Size = new System.Drawing.Size(1096, 121);
+            this.gbxEncabezado.Size = new System.Drawing.Size(1096, 167);
             this.gbxEncabezado.TabIndex = 0;
             this.gbxEncabezado.TabStop = false;
             this.gbxEncabezado.Text = "Encabezado de Gestión";
+            // 
+            // cmbEstadoProceso
+            // 
+            this.cmbEstadoProceso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEstadoProceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEstadoProceso.FormattingEnabled = true;
+            this.cmbEstadoProceso.Items.AddRange(new object[] {
+            "Ingreso de Órden",
+            "Ejecución de Órden",
+            "Recepción de Órden"});
+            this.cmbEstadoProceso.Location = new System.Drawing.Point(217, 113);
+            this.cmbEstadoProceso.Name = "cmbEstadoProceso";
+            this.cmbEstadoProceso.Size = new System.Drawing.Size(222, 28);
+            this.cmbEstadoProceso.TabIndex = 23;
+            this.cmbEstadoProceso.SelectedIndexChanged += new System.EventHandler(this.cmbEstadoProceso_SelectedIndexChanged);
+            // 
+            // lblEstadoProceso
+            // 
+            this.lblEstadoProceso.AutoSize = true;
+            this.lblEstadoProceso.Location = new System.Drawing.Point(35, 121);
+            this.lblEstadoProceso.Name = "lblEstadoProceso";
+            this.lblEstadoProceso.Size = new System.Drawing.Size(159, 20);
+            this.lblEstadoProceso.TabIndex = 22;
+            this.lblEstadoProceso.Text = "Estado del Proceso";
             // 
             // dtpFechaCompra
             // 
@@ -279,6 +307,7 @@
             // cmbProveedor
             // 
             this.cmbProveedor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProveedor.FormattingEnabled = true;
             this.cmbProveedor.Location = new System.Drawing.Point(335, 52);
             this.cmbProveedor.Margin = new System.Windows.Forms.Padding(4);
@@ -376,7 +405,7 @@
             this.MinimizeBox = false;
             this.Name = "frmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2316 - Registro de Compras y Pedidos";
+            this.Text = "2316 - Proceso de Registro de Órdenes de Compras y Pedidos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCompras_FormClosing);
             this.pnlInferior.ResumeLayout(false);
             this.pnlInferior.PerformLayout();
@@ -422,5 +451,7 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer tmrHoraFecha;
         private System.Windows.Forms.ToolTip tltToolTip;
+        private System.Windows.Forms.ComboBox cmbEstadoProceso;
+        private System.Windows.Forms.Label lblEstadoProceso;
     }
 }

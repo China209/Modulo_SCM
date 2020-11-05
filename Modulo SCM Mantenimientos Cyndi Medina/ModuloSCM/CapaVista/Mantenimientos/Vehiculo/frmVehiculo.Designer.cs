@@ -159,6 +159,7 @@
             // cmbMarca
             // 
             this.cmbMarca.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(236, 237);
             this.cmbMarca.Name = "cmbMarca";
@@ -216,6 +217,7 @@
             // cmbEstado
             // 
             this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "1",
@@ -241,6 +243,7 @@
             // cmbNombre
             // 
             this.cmbNombre.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Location = new System.Drawing.Point(236, 285);
             this.cmbNombre.Name = "cmbNombre";
@@ -285,7 +288,7 @@
             this.MinimizeBox = false;
             this.Name = "frmVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2312 - Vehículo";
+            this.Text = "2312 - Mantenimiento de Vehículo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVehiculo_FormClosing);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculo)).EndInit();

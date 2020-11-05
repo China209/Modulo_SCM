@@ -116,6 +116,7 @@
             // cmbEmpleado
             // 
             this.cmbEmpleado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpleado.FormattingEnabled = true;
             this.cmbEmpleado.Location = new System.Drawing.Point(168, 263);
             this.cmbEmpleado.Name = "cmbEmpleado";
@@ -128,6 +129,7 @@
             // cmbBodega
             // 
             this.cmbBodega.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbBodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBodega.FormattingEnabled = true;
             this.cmbBodega.Location = new System.Drawing.Point(168, 380);
             this.cmbBodega.Name = "cmbBodega";
@@ -140,6 +142,7 @@
             // cmbEstado
             // 
             this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "1",
@@ -165,6 +168,7 @@
             // cmbNomEmp
             // 
             this.cmbNomEmp.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbNomEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomEmp.FormattingEnabled = true;
             this.cmbNomEmp.Location = new System.Drawing.Point(168, 316);
             this.cmbNomEmp.Name = "cmbNomEmp";
@@ -175,6 +179,7 @@
             // cmbNomBodega
             // 
             this.cmbNomBodega.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbNomBodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNomBodega.FormattingEnabled = true;
             this.cmbNomBodega.Location = new System.Drawing.Point(168, 425);
             this.cmbNomBodega.Name = "cmbNomBodega";
@@ -212,7 +217,7 @@
             this.MinimizeBox = false;
             this.Name = "frmEncargadoBodega";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " 2314 -Encargado de Bodega";
+            this.Text = " 2314 -Mantenimiento de Encargado de Bodega";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEncargadoBodega_FormClosing);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEncargadoDatos)).EndInit();

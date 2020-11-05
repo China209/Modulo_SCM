@@ -148,6 +148,7 @@
             // cmbMunicipio
             // 
             this.cmbMunicipio.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbMunicipio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMunicipio.FormattingEnabled = true;
             this.cmbMunicipio.Location = new System.Drawing.Point(183, 231);
             this.cmbMunicipio.Name = "cmbMunicipio";
@@ -199,6 +200,7 @@
             // cmbEstado
             // 
             this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "1",
@@ -224,6 +226,7 @@
             // cmbNombre
             // 
             this.cmbNombre.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbNombre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombre.FormattingEnabled = true;
             this.cmbNombre.Location = new System.Drawing.Point(183, 286);
             this.cmbNombre.Name = "cmbNombre";
@@ -266,7 +269,7 @@
             this.MinimizeBox = false;
             this.Name = "frmBodega";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2313 - Bodega";
+            this.Text = "2313 - Mantenimiento de Bodega";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBodega_FormClosing);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBodega)).EndInit();

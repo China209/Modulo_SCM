@@ -8,6 +8,7 @@ using CapaVistaModuloSCM.Mantenimientos.Linea_Producto;
 using CapaVistaModuloSCM.Mantenimientos.Marca;
 using CapaVistaModuloSCM.Mantenimientos.Municipio;
 using CapaVistaModuloSCM.Mantenimientos.Producto;
+using CapaVistaModuloSCM.Mantenimientos.Tipo_de_Movimiento;
 using CapaVistaModuloSCM.Mantenimientos.Vehiculo;
 using CapaVistaModuloSCM.Procesos;
 using CapaVistaSeguridad;
@@ -38,17 +39,17 @@ namespace CapaVistaModuloSCM.MDI
         {
             frmLogin login = new frmLogin();
             login.ShowDialog();
-            textBox1.Text = login.usuario();
+            txtVistaUsuario.Text = login.usuario();
         }
         //Direcciona a formulario marca
         private void marcaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2311", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2311", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmMarca Bancos = new frmMarca(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmMarca Bancos = new frmMarca(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -62,10 +63,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2313", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2313", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmBodega Bancos = new frmBodega(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmBodega Bancos = new frmBodega(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -79,10 +80,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2312", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2312", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmVehiculo Bancos = new frmVehiculo(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmVehiculo Bancos = new frmVehiculo(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -96,10 +97,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2314", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2314", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmEncargadoBodega Bancos = new frmEncargadoBodega(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmEncargadoBodega Bancos = new frmEncargadoBodega(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -119,9 +120,9 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2316", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2316", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
+                bit.user(txtVistaUsuario.Text);
                 frmCompras Bancos = new frmCompras();
                 Bancos.MdiParent = this;
                 Bancos.Show();
@@ -136,10 +137,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2307", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2307", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmProveedor Bancos = new frmProveedor(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmProveedor Bancos = new frmProveedor(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -153,10 +154,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2309", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2309", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmCorreoProveedor Bancos = new frmCorreoProveedor(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmCorreoProveedor Bancos = new frmCorreoProveedor(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -170,10 +171,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2308", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2308", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmTelefonoProveedor Bancos = new frmTelefonoProveedor(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmTelefonoProveedor Bancos = new frmTelefonoProveedor(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -187,10 +188,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2310", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2310", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmPais Bancos = new frmPais(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmPais Bancos = new frmPais(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -204,10 +205,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2306", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2306", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmRuta Bancos = new frmRuta(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmRuta Bancos = new frmRuta(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -226,10 +227,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2301", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2301", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmLineaProducto Bancos = new frmLineaProducto(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmLineaProducto Bancos = new frmLineaProducto(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -243,10 +244,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2302", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2302", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmCategoriaProducto Bancos = new frmCategoriaProducto(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmCategoriaProducto Bancos = new frmCategoriaProducto(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -260,10 +261,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2303", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2303", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmProducto Bancos = new frmProducto(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmProducto Bancos = new frmProducto(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -277,10 +278,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2305", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2305", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmMunicipio Bancos = new frmMunicipio(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmMunicipio Bancos = new frmMunicipio(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -294,10 +295,10 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2304", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2304", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmDepartamento Bancos = new frmDepartamento(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmDepartamento Bancos = new frmDepartamento(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }
@@ -311,10 +312,27 @@ namespace CapaVistaModuloSCM.MDI
         {
             clsVistaBitacora bit = new clsVistaBitacora();
             clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
-            if (seguridad.PermisosAcceso("2318", textBox1.Text) == 1)
+            if (seguridad.PermisosAcceso("2318", txtVistaUsuario.Text) == 1)
             {
-                bit.user(textBox1.Text);
-                frmFabrica Bancos = new frmFabrica(textBox1.Text, this);
+                bit.user(txtVistaUsuario.Text);
+                frmFabrica Bancos = new frmFabrica(txtVistaUsuario.Text, this);
+                Bancos.MdiParent = this;
+                Bancos.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+        //Abrir Tipo de Movimiento
+        private void tipoDeMovimientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2315", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                frmTipoMovimiento Bancos = new frmTipoMovimiento(txtVistaUsuario.Text, this);
                 Bancos.MdiParent = this;
                 Bancos.Show();
             }

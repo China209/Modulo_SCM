@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMunicipio));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.label1 = new System.Windows.Forms.Label();
@@ -131,6 +132,7 @@
             // 
             // cmbIdDepartamento
             // 
+            this.cmbIdDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F);
             this.cmbIdDepartamento.FormattingEnabled = true;
             this.cmbIdDepartamento.Location = new System.Drawing.Point(214, 261);
@@ -165,15 +167,19 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.2F);
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(214, 460);
             this.cmbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(147, 28);
             this.cmbEstado.TabIndex = 10;
             this.cmbEstado.Tag = "estado_municipio";
-            this.cmbEstado.Text = "1";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dataGridView1
             // 
@@ -188,6 +194,7 @@
             // 
             // cmbNombreDepartamento
             // 
+            this.cmbNombreDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNombreDepartamento.Font = new System.Drawing.Font("Rockwell", 10.2F);
             this.cmbNombreDepartamento.FormattingEnabled = true;
             this.cmbNombreDepartamento.Location = new System.Drawing.Point(214, 298);
@@ -221,12 +228,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMunicipio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2305-Municipio";
+            this.Text = "2305- Mantenimiento de Municipio";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMunicipio_FormClosing);
             this.pnlNavegador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducto));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             // 
             // cmbIdLineaProducto
             // 
+            this.cmbIdLineaProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdLineaProducto.FormattingEnabled = true;
             this.cmbIdLineaProducto.Location = new System.Drawing.Point(254, 211);
             this.cmbIdLineaProducto.Name = "cmbIdLineaProducto";
@@ -110,6 +112,7 @@
             this.cmbIdLineaProducto.TabIndex = 4;
             this.cmbIdLineaProducto.Tag = "fk_id_linea_producto";
             this.cmbIdLineaProducto.SelectedIndexChanged += new System.EventHandler(this.cmbIdLineaProducto_SelectedIndexChanged);
+            this.cmbIdLineaProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdLineaProducto_KeyPress);
             // 
             // lblCategoriaProducto
             // 
@@ -122,6 +125,7 @@
             // 
             // cmbIdcategoria
             // 
+            this.cmbIdcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIdcategoria.FormattingEnabled = true;
             this.cmbIdcategoria.Location = new System.Drawing.Point(254, 262);
             this.cmbIdcategoria.Name = "cmbIdcategoria";
@@ -129,6 +133,7 @@
             this.cmbIdcategoria.TabIndex = 6;
             this.cmbIdcategoria.Tag = "fk_id_categoria_producto";
             this.cmbIdcategoria.SelectedIndexChanged += new System.EventHandler(this.cmbIdcategoria_SelectedIndexChanged);
+            this.cmbIdcategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdcategoria_KeyPress);
             // 
             // lblNombre
             // 
@@ -213,12 +218,17 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(254, 514);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(270, 28);
             this.cmbEstado.TabIndex = 16;
             this.cmbEstado.Tag = "estado_producto";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvProducto
             // 
@@ -232,6 +242,7 @@
             // 
             // cmbLinea
             // 
+            this.cmbLinea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLinea.FormattingEnabled = true;
             this.cmbLinea.Location = new System.Drawing.Point(374, 211);
             this.cmbLinea.Name = "cmbLinea";
@@ -241,6 +252,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(374, 262);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -279,12 +291,13 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Rockwell", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2303-Producto";
+            this.Text = "2303 - Mantenimiento de Producto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmProducto_FormClosing);
             this.pnlNavegador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();

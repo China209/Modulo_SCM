@@ -114,6 +114,7 @@
             // cmbEstado
             // 
             this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "1",
@@ -162,7 +163,7 @@
             this.MinimizeBox = false;
             this.Name = "frmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2311 - Marca";
+            this.Text = "2311 - Mantenimiento de Marca";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMarca_FormClosing);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcaVista)).EndInit();

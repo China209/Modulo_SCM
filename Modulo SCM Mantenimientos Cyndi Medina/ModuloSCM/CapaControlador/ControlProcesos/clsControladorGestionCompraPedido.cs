@@ -32,9 +32,10 @@ namespace CapaControladorModuloSCM.ControlProcesos
             try
             {
                 //Inserta en encabezado de compra
-                comando.CommandText = "INSERT INTO compra_encabezado(pk_id_compra_encabezado, fk_id_proveedor, fec_compra_encabezado_compra, total_compra_encabezado_compra, estado_encabezado_compra) VALUES (?,?,?,?,?);";
+                comando.CommandText = "INSERT INTO compra_encabezado(pk_id_compra_encabezado, fk_id_proveedor, estado_proceso_encabezado_compra, fec_compra_encabezado_compra, total_compra_encabezado_compra, estado_encabezado_compra) VALUES (?,?,?,?,?,?);";
                 comando.Parameters.Add("pk_id_compra_encabezado", OdbcType.Int).Value = compraEncabezado.IdCompra;
                 comando.Parameters.Add("fk_id_proveedor", OdbcType.Int).Value = compraEncabezado.IdProveedor;
+                comando.Parameters.Add("estado_proceso_encabezado_compra", OdbcType.Int).Value = compraEncabezado.EstadoProceso;
                 comando.Parameters.Add("fec_compra_encabezado_compra", OdbcType.DateTime).Value = compraEncabezado.FechaCompra1;
                 comando.Parameters.Add("total_compra_encabezado_compra", OdbcType.Double).Value = compraEncabezado.TotalCompra;
                 comando.Parameters.Add("estado_encabezado_compra", OdbcType.Int).Value = compraEncabezado.Estado1;
@@ -66,10 +67,11 @@ namespace CapaControladorModuloSCM.ControlProcesos
             comando.Transaction = transaccion;
             try
             {
-                //Inserta en encabezado de compra
-                comando.CommandText = "INSERT INTO pedido_encabezado(pk_id_pedido_encabezado, fk_id_fabrica, fec_pedido_pedido_encabezado, total_pedido_encabezado, estado_pedido_encabezado) VALUES (?,?,?,?,?);";
+                //Inserta en encabezado de pedido
+                comando.CommandText = "INSERT INTO pedido_encabezado(pk_id_pedido_encabezado, fk_id_fabrica, estado_proceso_pedido_encabezado, fec_pedido_pedido_encabezado, total_pedido_encabezado, estado_pedido_encabezado) VALUES (?,?,?,?,?,?);";
                 comando.Parameters.Add("pk_id_pedido_encabezado", OdbcType.Int).Value = pedidoEncabezado.IdPedido;
                 comando.Parameters.Add("fk_id_fabrica", OdbcType.Int).Value = pedidoEncabezado.IdFabrica;
+                comando.Parameters.Add("estado_proceso_pedido_encabezado", OdbcType.Int).Value = pedidoEncabezado.EstadoProceso;
                 comando.Parameters.Add("fec_pedido_pedido_encabezado", OdbcType.DateTime).Value = pedidoEncabezado.FechaPedido1;
                 comando.Parameters.Add("total_pedido_encabezado", OdbcType.Double).Value = pedidoEncabezado.TotalPedido;
                 comando.Parameters.Add("estado_pedido_encabezado", OdbcType.Int).Value = pedidoEncabezado.Estado1;

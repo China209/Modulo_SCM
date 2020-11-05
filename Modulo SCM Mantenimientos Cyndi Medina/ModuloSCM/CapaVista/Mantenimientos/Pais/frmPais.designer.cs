@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPais));
             this.plnNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -135,6 +136,7 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(198, 325);
@@ -142,6 +144,7 @@
             this.cmbEstado.Size = new System.Drawing.Size(173, 28);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.Tag = "estado_pais";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             this.cmbEstado.MouseHover += new System.EventHandler(this.cmbEstado_MouseHover);
             // 
             // dgvPais
@@ -170,11 +173,12 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.plnNavegador);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPais";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "2310 - Pais";
+            this.Text = "2310 - Mantenimiento de Pais";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPais_FormClosing);
             this.plnNavegador.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPais)).EndInit();

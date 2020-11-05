@@ -14,6 +14,7 @@ namespace CapaModeloModuloSCM.ClasesProcesos
         //Datos de la tabla
         private int idPedido;
         private int idFabrica;
+        private int estadoProceso;
         private DateTime FechaPedido;
         private double totalPedido;
         private int Estado;
@@ -23,5 +24,6 @@ namespace CapaModeloModuloSCM.ClasesProcesos
         public DateTime FechaPedido1 { get => FechaPedido; set => FechaPedido = value; }
         public double TotalPedido { get => totalPedido; set => totalPedido = value; }
         public int Estado1 { get => Estado; set => Estado = value; }
+        public int EstadoProceso { get => estadoProceso; set => estadoProceso = value; }
     }
 }
