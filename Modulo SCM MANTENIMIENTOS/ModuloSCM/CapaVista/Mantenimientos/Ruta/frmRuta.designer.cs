@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRuta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCodigo.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(186, 204);
             this.txtCodigo.Name = "txtCodigo";
@@ -115,30 +117,36 @@
             // 
             // txtOrigen
             // 
+            this.txtOrigen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtOrigen.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOrigen.Location = new System.Drawing.Point(186, 244);
             this.txtOrigen.Name = "txtOrigen";
             this.txtOrigen.Size = new System.Drawing.Size(193, 29);
             this.txtOrigen.TabIndex = 6;
             this.txtOrigen.Tag = "origen_ruta";
+            this.txtOrigen.TextChanged += new System.EventHandler(this.txtOrigen_TextChanged);
             // 
             // txtDestino
             // 
+            this.txtDestino.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDestino.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDestino.Location = new System.Drawing.Point(186, 286);
             this.txtDestino.Name = "txtDestino";
             this.txtDestino.Size = new System.Drawing.Size(193, 29);
             this.txtDestino.TabIndex = 7;
             this.txtDestino.Tag = "destino_ruta";
+            this.txtDestino.TextChanged += new System.EventHandler(this.txtDestino_TextChanged);
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDescripcion.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(186, 333);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(193, 29);
             this.txtDescripcion.TabIndex = 8;
             this.txtDescripcion.Tag = "descripcion_ruta";
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // lblEstado
             // 
@@ -152,13 +160,19 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(186, 382);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(193, 28);
             this.cmbEstado.TabIndex = 10;
             this.cmbEstado.Tag = "estado_ruta";
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvRuta
             // 
@@ -188,6 +202,7 @@
             this.Controls.Add(this.lblOrigen);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRuta";

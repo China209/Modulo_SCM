@@ -75,5 +75,34 @@ namespace CapaVistaModuloSCM.Mantenimientos
                 e.Cancel = true;
             }
         }
+
+        private void txtOrigen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDestino_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char cCaracter = e.KeyChar;
+            if (!char.IsDigit(cCaracter) && cCaracter != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

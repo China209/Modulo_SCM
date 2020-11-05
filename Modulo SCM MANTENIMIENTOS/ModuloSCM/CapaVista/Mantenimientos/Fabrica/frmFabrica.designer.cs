@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFabrica));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -159,6 +160,7 @@
             this.cmbIdMunicipio.TabIndex = 9;
             this.cmbIdMunicipio.Tag = "fk_id_municipio";
             this.cmbIdMunicipio.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbIdMunicipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdMunicipio_KeyPress);
             // 
             // txtDimension
             // 
@@ -198,12 +200,16 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(197, 510);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(255, 28);
             this.cmbEstado.TabIndex = 14;
             this.cmbEstado.Tag = "estado_fabrica";
             this.cmbEstado.Text = "1";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvFabrica
             // 
@@ -252,6 +258,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Rockwell", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

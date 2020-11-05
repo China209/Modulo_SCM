@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPais));
             this.plnNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -106,6 +107,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCodigo.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(198, 193);
             this.txtCodigo.Name = "txtCodigo";
@@ -115,6 +117,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNombre.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(198, 238);
             this.txtNombre.Name = "txtNombre";
@@ -125,6 +128,7 @@
             // 
             // txtCapital
             // 
+            this.txtCapital.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCapital.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCapital.Location = new System.Drawing.Point(198, 282);
             this.txtCapital.Name = "txtCapital";
@@ -135,13 +139,18 @@
             // 
             // cmbEstado
             // 
+            this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbEstado.Font = new System.Drawing.Font("Rockwell", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(198, 325);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(173, 28);
             this.cmbEstado.TabIndex = 8;
             this.cmbEstado.Tag = "estado_pais";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             this.cmbEstado.MouseHover += new System.EventHandler(this.cmbEstado_MouseHover);
             // 
             // dgvPais
@@ -170,6 +179,7 @@
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.plnNavegador);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmPais";

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProducto));
             this.pnlNavegador = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -86,6 +87,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtCodigo.Location = new System.Drawing.Point(254, 163);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(270, 27);
@@ -103,6 +105,7 @@
             // 
             // cmbIdLineaProducto
             // 
+            this.cmbIdLineaProducto.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbIdLineaProducto.FormattingEnabled = true;
             this.cmbIdLineaProducto.Location = new System.Drawing.Point(254, 211);
             this.cmbIdLineaProducto.Name = "cmbIdLineaProducto";
@@ -110,6 +113,7 @@
             this.cmbIdLineaProducto.TabIndex = 4;
             this.cmbIdLineaProducto.Tag = "fk_id_linea_producto";
             this.cmbIdLineaProducto.SelectedIndexChanged += new System.EventHandler(this.cmbIdLineaProducto_SelectedIndexChanged);
+            this.cmbIdLineaProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdLineaProducto_KeyPress);
             // 
             // lblCategoriaProducto
             // 
@@ -122,6 +126,7 @@
             // 
             // cmbIdcategoria
             // 
+            this.cmbIdcategoria.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbIdcategoria.FormattingEnabled = true;
             this.cmbIdcategoria.Location = new System.Drawing.Point(254, 262);
             this.cmbIdcategoria.Name = "cmbIdcategoria";
@@ -129,6 +134,7 @@
             this.cmbIdcategoria.TabIndex = 6;
             this.cmbIdcategoria.Tag = "fk_id_categoria_producto";
             this.cmbIdcategoria.SelectedIndexChanged += new System.EventHandler(this.cmbIdcategoria_SelectedIndexChanged);
+            this.cmbIdcategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbIdcategoria_KeyPress);
             // 
             // lblNombre
             // 
@@ -178,47 +184,61 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNombre.Location = new System.Drawing.Point(254, 315);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(270, 27);
             this.txtNombre.TabIndex = 12;
             this.txtNombre.Tag = "nombre_producto";
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtPrecio
             // 
+            this.txtPrecio.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPrecio.Location = new System.Drawing.Point(254, 362);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(270, 27);
             this.txtPrecio.TabIndex = 13;
             this.txtPrecio.Tag = "precio_producto";
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtMedida
             // 
+            this.txtMedida.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMedida.Location = new System.Drawing.Point(253, 412);
             this.txtMedida.Name = "txtMedida";
             this.txtMedida.Size = new System.Drawing.Size(270, 27);
             this.txtMedida.TabIndex = 14;
             this.txtMedida.Tag = "medida_producto";
+            this.txtMedida.TextChanged += new System.EventHandler(this.txtMedida_TextChanged);
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDescripcion.Location = new System.Drawing.Point(253, 464);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(271, 27);
             this.txtDescripcion.TabIndex = 15;
             this.txtDescripcion.Tag = "descripcion_producto";
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // cmbEstado
             // 
+            this.cmbEstado.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(254, 514);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(270, 28);
             this.cmbEstado.TabIndex = 16;
             this.cmbEstado.Tag = "estado_producto";
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // dgvProducto
             // 
@@ -232,6 +252,7 @@
             // 
             // cmbLinea
             // 
+            this.cmbLinea.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbLinea.FormattingEnabled = true;
             this.cmbLinea.Location = new System.Drawing.Point(374, 211);
             this.cmbLinea.Name = "cmbLinea";
@@ -241,6 +262,7 @@
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(374, 262);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -279,6 +301,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.pnlNavegador);
             this.Font = new System.Drawing.Font("Rockwell", 10F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

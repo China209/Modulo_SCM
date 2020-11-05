@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDepartamento));
             this.panel1 = new System.Windows.Forms.Panel();
             this.navegador1 = new CapaVistaNavegador.Navegador();
             this.lblCodigo = new System.Windows.Forms.Label();
@@ -148,12 +149,16 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "1",
+            "0"});
             this.cmbEstado.Location = new System.Drawing.Point(202, 496);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(224, 28);
             this.cmbEstado.TabIndex = 22;
             this.cmbEstado.Tag = "estado_departamento";
             this.cmbEstado.Text = "1";
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // tltAyuda
             // 
@@ -176,6 +181,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Rockwell", 10.2F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
