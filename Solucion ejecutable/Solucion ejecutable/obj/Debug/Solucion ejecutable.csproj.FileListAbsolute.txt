@@ -1,7 +1,6 @@
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.exe.config
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.exe
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.pdb
-C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaMuduloSCM.pdb
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csprojAssemblyReference.cache
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion_ejecutable.Properties.Resources.resources
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csproj.GenerateResource.cache
@@ -12,7 +11,6 @@ C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\S
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion_ejecutable.Form1.resources
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModelo.dll
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModelo.pdb
-C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaMuduloSCM.dll
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControlador.dll
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControlador.pdb
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaNavegador.dll
@@ -54,59 +52,9 @@ C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\C
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloReporteador.pdb
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorReporteador.pdb
 C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloNavegador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.exe.config
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.exe
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\Solucion ejecutable.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaMuduloSCM.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaNavegador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaSeguridad.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModelo.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaReporteador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVista.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorNavegador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorSeguridad.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloSeguridad.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloReporteador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorReporteador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.Windows.Forms.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControlador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloNavegador.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportSource.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\AxShockwaveFlashObjects.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\ShockwaveFlashObjects.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\stdole.dll
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaMuduloSCM.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaNavegador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaSeguridad.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModelo.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaReporteador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVista.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorNavegador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorSeguridad.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloSeguridad.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloReporteador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorReporteador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControlador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloNavegador.pdb
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csprojAssemblyReference.cache
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion_ejecutable.Form1.resources
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion_ejecutable.Properties.Resources.resources
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csproj.GenerateResource.cache
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csproj.CoreCompileInputs.cache
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.csproj.CopyComplete
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.exe
-C:\Users\Daniel\source\repos\Solucion ejecutable\Solucion ejecutable\obj\Debug\Solucion ejecutable.pdb
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaModuloSCM.dll
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorModuloSCM.dll
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloModuloSCM.dll
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaVistaModuloSCM.pdb
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaControladorModuloSCM.pdb
+C:\Users\Laptop\source\repos\Solucion ejecutable\Solucion ejecutable\bin\Debug\CapaModeloModuloSCM.pdb

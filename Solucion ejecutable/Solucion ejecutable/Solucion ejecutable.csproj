@@ -33,9 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CapaVistaMuduloSCM, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CapaVistaMuduloSCM\CapaVistaMuduloSCM\bin\Debug\CapaVistaMuduloSCM.dll</HintPath>
+    <Reference Include="CapaVistaModuloSCM">
+      <HintPath>..\..\..\..\Downloads\Modulo_SCM\Modulo SCM Mantenimientos\ModuloSCM\CapaVista\bin\Debug\CapaVistaModuloSCM.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

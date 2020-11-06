@@ -1,4 +1,4 @@
-﻿using CapaVistaMuduloSCM.MDI;
+﻿using CapaVistaModuloSCM.MDI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,4 +20,5 @@ namespace Solucion_ejecutable
             Application.Run(new frmMDI());
         }
     }
+
 }
