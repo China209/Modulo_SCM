@@ -30,12 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVistaCompraPedido));
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.pnlCuerpo = new System.Windows.Forms.Panel();
             this.rbtnCompras = new System.Windows.Forms.RadioButton();
             this.rbtnPedido = new System.Windows.Forms.RadioButton();
             this.dgvVistaDatos = new System.Windows.Forms.DataGridView();
-            this.btnAyuda = new System.Windows.Forms.Button();
+            this.rbtnInventario = new System.Windows.Forms.RadioButton();
+            this.rbtnExistencias = new System.Windows.Forms.RadioButton();
             this.pnlSuperior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVistaDatos)).BeginInit();
@@ -52,6 +54,19 @@
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(1128, 125);
             this.pnlSuperior.TabIndex = 0;
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
+            this.btnAyuda.Location = new System.Drawing.Point(1014, 0);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(114, 125);
+            this.btnAyuda.TabIndex = 1;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // btnIngresar
             // 
@@ -71,6 +86,8 @@
             // pnlCuerpo
             // 
             this.pnlCuerpo.BackColor = System.Drawing.Color.White;
+            this.pnlCuerpo.Controls.Add(this.rbtnExistencias);
+            this.pnlCuerpo.Controls.Add(this.rbtnInventario);
             this.pnlCuerpo.Controls.Add(this.rbtnCompras);
             this.pnlCuerpo.Controls.Add(this.rbtnPedido);
             this.pnlCuerpo.Controls.Add(this.dgvVistaDatos);
@@ -121,18 +138,29 @@
             this.dgvVistaDatos.Size = new System.Drawing.Size(1061, 590);
             this.dgvVistaDatos.TabIndex = 0;
             // 
-            // btnAyuda
+            // rbtnInventario
             // 
-            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAyuda.FlatAppearance.BorderSize = 0;
-            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
-            this.btnAyuda.Location = new System.Drawing.Point(1014, 0);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(114, 125);
-            this.btnAyuda.TabIndex = 1;
-            this.btnAyuda.UseVisualStyleBackColor = true;
-            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            this.rbtnInventario.AutoSize = true;
+            this.rbtnInventario.Location = new System.Drawing.Point(454, 38);
+            this.rbtnInventario.Name = "rbtnInventario";
+            this.rbtnInventario.Size = new System.Drawing.Size(110, 24);
+            this.rbtnInventario.TabIndex = 3;
+            this.rbtnInventario.TabStop = true;
+            this.rbtnInventario.Text = "Inventario";
+            this.rbtnInventario.UseVisualStyleBackColor = true;
+            this.rbtnInventario.CheckedChanged += new System.EventHandler(this.rbtnInventario_CheckedChanged);
+            // 
+            // rbtnExistencias
+            // 
+            this.rbtnExistencias.AutoSize = true;
+            this.rbtnExistencias.Location = new System.Drawing.Point(633, 38);
+            this.rbtnExistencias.Name = "rbtnExistencias";
+            this.rbtnExistencias.Size = new System.Drawing.Size(119, 24);
+            this.rbtnExistencias.TabIndex = 4;
+            this.rbtnExistencias.TabStop = true;
+            this.rbtnExistencias.Text = "Existencias";
+            this.rbtnExistencias.UseVisualStyleBackColor = true;
+            this.rbtnExistencias.CheckedChanged += new System.EventHandler(this.rbtnExistencias_CheckedChanged);
             // 
             // frmVistaCompraPedido
             // 
@@ -167,5 +195,7 @@
         private System.Windows.Forms.RadioButton rbtnPedido;
         private System.Windows.Forms.DataGridView dgvVistaDatos;
         private System.Windows.Forms.Button btnAyuda;
+        private System.Windows.Forms.RadioButton rbtnExistencias;
+        private System.Windows.Forms.RadioButton rbtnInventario;
     }
 }

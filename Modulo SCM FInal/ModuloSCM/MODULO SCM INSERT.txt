@@ -4,7 +4,7 @@ INSERT INTO `login` (`pk_id_login`, `usuario_login`, `contraseña_login`, `nombr
 (3, 'bmaza', 'xTfsC3/XR/CVyDvNr1Fs+g==', 'Bryan Mazariegos', 1),
 (4, 'jsican', 'jsican', 'Jeshua Sican', 0),
 (5, 'jmorataya', '123', 'Julio Morataya', 0),
-(100, 'Cyndi', '8zSCkFhA9DUcqH//GEAN/A==', 'Cyndi Medina', 1);
+(100, 'Cyndi', '8zSCkFhA9DUcqH//GEAN/A==', 'Cyndi Medina', 1); /*Clave cyndi123*/
 
 INSERT INTO `permiso` (`pk_id_permiso`, `insertar_permiso`, `modificar_permiso`, `eliminar_permiso`, `consultar_permiso`, `imprimir_permiso`) VALUES
 (1, 1, 1, 1, 1, 1),
