@@ -363,6 +363,12 @@ namespace CapaVistaModuloSCM.Procesos
         {
             txtDescripcion.MaxLength = 50;
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudasModuloSCM/AyudasSCMASII.chm", "MovimientoInventarios.html");
+        }
+
         //Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {

@@ -57,6 +57,8 @@
             this.cmsOpciones = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.itemEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.itemActualizar = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAyuda = new System.Windows.Forms.Button();
+            this.pnlSuperior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             this.gbxDetalleMovimiento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimiento)).BeginInit();
@@ -67,11 +69,12 @@
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.pnlSuperior.Controls.Add(this.btnAyuda);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(1133, 35);
+            this.pnlSuperior.Size = new System.Drawing.Size(1133, 49);
             this.pnlSuperior.TabIndex = 0;
             // 
             // pnlCuerpo
@@ -81,10 +84,10 @@
             this.pnlCuerpo.Controls.Add(this.gbxDetalleMovimiento);
             this.pnlCuerpo.Controls.Add(this.gbxEncabezado);
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCuerpo.Location = new System.Drawing.Point(0, 35);
+            this.pnlCuerpo.Location = new System.Drawing.Point(0, 49);
             this.pnlCuerpo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCuerpo.Name = "pnlCuerpo";
-            this.pnlCuerpo.Size = new System.Drawing.Size(1133, 729);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1133, 715);
             this.pnlCuerpo.TabIndex = 1;
             // 
             // btnGuardar
@@ -104,7 +107,7 @@
             // gbxDetalleMovimiento
             // 
             this.gbxDetalleMovimiento.Controls.Add(this.dgvMovimiento);
-            this.gbxDetalleMovimiento.Location = new System.Drawing.Point(23, 375);
+            this.gbxDetalleMovimiento.Location = new System.Drawing.Point(23, 392);
             this.gbxDetalleMovimiento.Name = "gbxDetalleMovimiento";
             this.gbxDetalleMovimiento.Size = new System.Drawing.Size(836, 288);
             this.gbxDetalleMovimiento.TabIndex = 2;
@@ -149,7 +152,7 @@
             this.gbxEncabezado.Controls.Add(this.lblRuta);
             this.gbxEncabezado.Controls.Add(this.lblTipoMovimiento);
             this.gbxEncabezado.Controls.Add(this.lblNoInventario);
-            this.gbxEncabezado.Location = new System.Drawing.Point(23, 7);
+            this.gbxEncabezado.Location = new System.Drawing.Point(23, 21);
             this.gbxEncabezado.Name = "gbxEncabezado";
             this.gbxEncabezado.Size = new System.Drawing.Size(1081, 351);
             this.gbxEncabezado.TabIndex = 0;
@@ -352,6 +355,19 @@
             this.itemActualizar.Size = new System.Drawing.Size(157, 24);
             this.itemActualizar.Text = "Actualizar";
             // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
+            this.btnAyuda.Location = new System.Drawing.Point(1049, 0);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(84, 49);
+            this.btnAyuda.TabIndex = 1;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
             // frmMovimientoInventarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -368,6 +384,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "2400 - Movimientos de Inventarios";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMovimientoInventarios_FormClosing);
+            this.pnlSuperior.ResumeLayout(false);
             this.pnlCuerpo.ResumeLayout(false);
             this.gbxDetalleMovimiento.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimiento)).EndInit();
@@ -407,5 +424,6 @@
         private System.Windows.Forms.Label lblRuta;
         private System.Windows.Forms.Label lblTipoMovimiento;
         private System.Windows.Forms.Label lblNoInventario;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

@@ -75,5 +75,10 @@ namespace CapaVistaModuloSCM.Procesos
                 e.Cancel = true;
             }
         }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, "AyudasModuloSCM/AyudasSCMASII.chm", "VistaCompras.html");
+        }
     }
 }

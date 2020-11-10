@@ -19,6 +19,24 @@
 			</OBJECT>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Procesos">
+		<param name="ImageNumber" value="3">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="MovimientoInventarios">
+			<param name="Local" value="MovimientoInventarios.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="VistaCompras">
+			<param name="Local" value="VistaCompras.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GestionCompras">
+			<param name="Local" value="GestionCompras.html">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Mantenimientos">
 		<param name="ImageNumber" value="3">
 		</OBJECT>

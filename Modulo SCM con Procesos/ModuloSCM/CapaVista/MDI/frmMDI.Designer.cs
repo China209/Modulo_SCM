@@ -36,6 +36,7 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.msMenuMDI = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.módulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,9 +60,6 @@
             this.comprasYPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientoDeInventariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmrHoraFecha = new System.Windows.Forms.Timer(this.components);
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +69,13 @@
             this.perfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignaciónDeAplicaciónAPerfilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrHoraFecha = new System.Windows.Forms.Timer(this.components);
+            this.gestorDeReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarReporteAModuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignarReporteAAplicaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verReportesDeMóduloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlInferior.SuspendLayout();
             this.msMenuMDI.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +155,13 @@
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.archivoToolStripMenuItem.Text = "Inicio";
+            // 
+            // cerrarSesiónToolStripMenuItem
+            // 
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(219, 26);
+            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // módulosToolStripMenuItem
             // 
@@ -334,24 +345,6 @@
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
             this.ayudaToolStripMenuItem.Text = "Herramientas";
             // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // ayudaToolStripMenuItem1
-            // 
-            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(84, 26);
-            this.ayudaToolStripMenuItem1.Text = "Ayuda";
-            this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
-            // 
-            // tmrHoraFecha
-            // 
-            this.tmrHoraFecha.Enabled = true;
-            this.tmrHoraFecha.Tick += new System.EventHandler(this.tmrHoraFecha_Tick);
-            // 
             // seguridadToolStripMenuItem
             // 
             this.seguridadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -362,7 +355,7 @@
             this.mantenimientoModuloToolStripMenuItem,
             this.perfilToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             // 
             // cambioDeContraseñaToolStripMenuItem
@@ -423,12 +416,56 @@
             this.asignaciónDeAplicaciónAPerfilToolStripMenuItem.Text = "Asignación de Aplicación a Perfil";
             this.asignaciónDeAplicaciónAPerfilToolStripMenuItem.Click += new System.EventHandler(this.asignaciónDeAplicaciónAPerfilToolStripMenuItem_Click);
             // 
-            // cerrarSesiónToolStripMenuItem
+            // reportesToolStripMenuItem
             // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestorDeReportesToolStripMenuItem,
+            this.asignarReporteAModuloToolStripMenuItem,
+            this.asignarReporteAAplicaciónToolStripMenuItem,
+            this.verReportesDeMóduloToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(105, 26);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // ayudaToolStripMenuItem1
+            // 
+            this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(84, 26);
+            this.ayudaToolStripMenuItem1.Text = "Ayuda";
+            this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
+            // 
+            // tmrHoraFecha
+            // 
+            this.tmrHoraFecha.Enabled = true;
+            this.tmrHoraFecha.Tick += new System.EventHandler(this.tmrHoraFecha_Tick);
+            // 
+            // gestorDeReportesToolStripMenuItem
+            // 
+            this.gestorDeReportesToolStripMenuItem.Name = "gestorDeReportesToolStripMenuItem";
+            this.gestorDeReportesToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.gestorDeReportesToolStripMenuItem.Text = "Gestor de Reportes";
+            this.gestorDeReportesToolStripMenuItem.Click += new System.EventHandler(this.gestorDeReportesToolStripMenuItem_Click);
+            // 
+            // asignarReporteAModuloToolStripMenuItem
+            // 
+            this.asignarReporteAModuloToolStripMenuItem.Name = "asignarReporteAModuloToolStripMenuItem";
+            this.asignarReporteAModuloToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.asignarReporteAModuloToolStripMenuItem.Text = "Asignar Reporte a Módulo";
+            this.asignarReporteAModuloToolStripMenuItem.Click += new System.EventHandler(this.asignarReporteAModuloToolStripMenuItem_Click);
+            // 
+            // asignarReporteAAplicaciónToolStripMenuItem
+            // 
+            this.asignarReporteAAplicaciónToolStripMenuItem.Name = "asignarReporteAAplicaciónToolStripMenuItem";
+            this.asignarReporteAAplicaciónToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.asignarReporteAAplicaciónToolStripMenuItem.Text = "Asignar Reporte a Aplicación";
+            this.asignarReporteAAplicaciónToolStripMenuItem.Click += new System.EventHandler(this.asignarReporteAAplicaciónToolStripMenuItem_Click);
+            // 
+            // verReportesDeMóduloToolStripMenuItem
+            // 
+            this.verReportesDeMóduloToolStripMenuItem.Name = "verReportesDeMóduloToolStripMenuItem";
+            this.verReportesDeMóduloToolStripMenuItem.Size = new System.Drawing.Size(362, 26);
+            this.verReportesDeMóduloToolStripMenuItem.Text = "Ver Reportes de Módulo";
+            this.verReportesDeMóduloToolStripMenuItem.Click += new System.EventHandler(this.verReportesDeMóduloToolStripMenuItem_Click);
             // 
             // frmMDI
             // 
@@ -497,5 +534,9 @@
         private System.Windows.Forms.ToolStripMenuItem mantenimientoPerfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignaciónDeAplicaciónAPerfilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestorDeReportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarReporteAModuloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignarReporteAAplicaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verReportesDeMóduloToolStripMenuItem;
     }
 }

@@ -54,6 +54,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.tmrTotal = new System.Windows.Forms.Timer(this.components);
             this.tltToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlCuerpo.SuspendLayout();
@@ -61,6 +62,7 @@
             this.gbxDetalle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.gbxEncabezado.SuspendLayout();
+            this.pnlSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCuerpo
@@ -332,12 +334,26 @@
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.pnlSuperior.Controls.Add(this.btnAyuda);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Margin = new System.Windows.Forms.Padding(5);
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(1391, 51);
             this.pnlSuperior.TabIndex = 6;
+            // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
+            this.btnAyuda.Location = new System.Drawing.Point(1307, 0);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(84, 51);
+            this.btnAyuda.TabIndex = 0;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
             // 
             // tmrTotal
             // 
@@ -372,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.gbxEncabezado.ResumeLayout(false);
             this.gbxEncabezado.PerformLayout();
+            this.pnlSuperior.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -403,5 +420,6 @@
         private System.Windows.Forms.ToolTip tltToolTip;
         private System.Windows.Forms.ComboBox cmbEstadoProceso;
         private System.Windows.Forms.Label lblEstadoProceso;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }

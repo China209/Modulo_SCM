@@ -12,6 +12,9 @@ using CapaVistaModuloSCM.Mantenimientos.Tipo_de_Movimiento;
 using CapaVistaModuloSCM.Mantenimientos.Vehiculo;
 using CapaVistaModuloSCM.Procesos;
 using CapaVistaSeguridad;
+using CapaVistaReporteador;
+using CapaVistaReporteador.Mantenimientos;
+using CapaVistaReporteador.ReportesModulos;
 using CapaVistaSeguridad.Formularios;
 using CapaVistaSeguridad.Formularios.Mantenimientos;
 using System;
@@ -660,6 +663,74 @@ namespace CapaVistaModuloSCM.MDI
             frmLogin login = new frmLogin();
             login.ShowDialog();
             txtVistaUsuario.Text = login.usuario();
+        }
+
+        private void gestorDeReportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            bit.user(txtVistaUsuario.Text);
+            bit.insert("Ingreso a Gestor de Reportes", 101);
+            Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmGestorReportes);
+            if (frmFormulario != null)
+            {
+                frmFormulario.BringToFront();
+                return;
+            }
+
+            frmFormulario = new frmGestorReportes();
+            frmFormulario.MdiParent = this;
+            frmFormulario.Show();
+        }
+
+        private void asignarReporteAModuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            bit.user(txtVistaUsuario.Text);
+            bit.insert("Ingreso a Asignación de Reportes a Módulos", 104);
+            Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmReporteMod);
+            if (frmFormulario != null)
+            {
+                frmFormulario.BringToFront();
+                return;
+            }
+
+            frmFormulario = new frmReporteMod();
+            frmFormulario.MdiParent = this;
+            frmFormulario.Show();
+        }
+
+        private void asignarReporteAAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            bit.user(txtVistaUsuario.Text);
+            bit.insert("Ingreso a Asignación de Reportes a Aplicación ", 105);
+            Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmReporteApp);
+            if (frmFormulario != null)
+            {
+                frmFormulario.BringToFront();
+                return;
+            }
+
+            frmFormulario = new frmReporteApp();
+            frmFormulario.MdiParent = this;
+            frmFormulario.Show();
+        }
+
+        private void verReportesDeMóduloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            bit.user(txtVistaUsuario.Text);
+            bit.insert("Ingreso a Asignación de Reportes a Aplicación ", 102);
+            Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmReportesModulos);
+            if (frmFormulario != null)
+            {
+                frmFormulario.BringToFront();
+                return;
+            }
+
+            frmFormulario = new frmReportesModulos(6);
+            frmFormulario.MdiParent = this;
+            frmFormulario.Show();
         }
     }
 }

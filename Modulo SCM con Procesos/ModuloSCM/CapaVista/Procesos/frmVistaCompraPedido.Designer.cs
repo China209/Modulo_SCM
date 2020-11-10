@@ -35,6 +35,7 @@
             this.rbtnCompras = new System.Windows.Forms.RadioButton();
             this.rbtnPedido = new System.Windows.Forms.RadioButton();
             this.dgvVistaDatos = new System.Windows.Forms.DataGridView();
+            this.btnAyuda = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             this.pnlCuerpo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVistaDatos)).BeginInit();
@@ -43,12 +44,13 @@
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.pnlSuperior.Controls.Add(this.btnAyuda);
             this.pnlSuperior.Controls.Add(this.btnIngresar);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(1128, 141);
+            this.pnlSuperior.Size = new System.Drawing.Size(1128, 125);
             this.pnlSuperior.TabIndex = 0;
             // 
             // btnIngresar
@@ -73,10 +75,10 @@
             this.pnlCuerpo.Controls.Add(this.rbtnPedido);
             this.pnlCuerpo.Controls.Add(this.dgvVistaDatos);
             this.pnlCuerpo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCuerpo.Location = new System.Drawing.Point(0, 141);
+            this.pnlCuerpo.Location = new System.Drawing.Point(0, 125);
             this.pnlCuerpo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCuerpo.Name = "pnlCuerpo";
-            this.pnlCuerpo.Size = new System.Drawing.Size(1128, 752);
+            this.pnlCuerpo.Size = new System.Drawing.Size(1128, 768);
             this.pnlCuerpo.TabIndex = 1;
             // 
             // rbtnCompras
@@ -119,6 +121,19 @@
             this.dgvVistaDatos.Size = new System.Drawing.Size(1061, 590);
             this.dgvVistaDatos.TabIndex = 0;
             // 
+            // btnAyuda
+            // 
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAyuda.FlatAppearance.BorderSize = 0;
+            this.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
+            this.btnAyuda.Location = new System.Drawing.Point(1014, 0);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(114, 125);
+            this.btnAyuda.TabIndex = 1;
+            this.btnAyuda.UseVisualStyleBackColor = true;
+            this.btnAyuda.Click += new System.EventHandler(this.btnAyuda_Click);
+            // 
             // frmVistaCompraPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -151,5 +166,6 @@
         private System.Windows.Forms.RadioButton rbtnCompras;
         private System.Windows.Forms.RadioButton rbtnPedido;
         private System.Windows.Forms.DataGridView dgvVistaDatos;
+        private System.Windows.Forms.Button btnAyuda;
     }
 }
