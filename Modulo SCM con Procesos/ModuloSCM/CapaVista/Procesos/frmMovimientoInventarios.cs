@@ -35,6 +35,7 @@ namespace CapaVistaModuloSCM.Procesos
             cargarVehiculos();
             txtNoInventario.Text= movimientosInventarios.generarID("movimiento_inventario", "pk_id_movimiento_inventario").ToString();
         }
+        //Validat Ingreso de Datos
         private bool validarCamposIngreso()
         {
             if (cmbTipo.SelectedIndex == -1)
@@ -74,6 +75,7 @@ namespace CapaVistaModuloSCM.Procesos
             }
             return true;
         }
+        //Bloqueo de Componentes
         private void bloquearComponentes(int habilitacionNo)
         {
             if (habilitacionNo == 1)
@@ -144,7 +146,6 @@ namespace CapaVistaModuloSCM.Procesos
             {
                 DateTime dtFecha = dtpFechaMovimiento.Value;
                 clsMantenimientoInventario auxMantenimiento = new clsMantenimientoInventario();
-                MessageBox.Show("Ruta " + Ruta + " Vehiculo " + Vehiculo + " Documento" + Docu);
                 auxMantenimiento.IdMovimiento = int.Parse(txtNoInventario.Text);
                 auxMantenimiento.IdTipoMovimiento = int.Parse(cmbTipo.SelectedValue.ToString());
                 auxMantenimiento.IdRuta = Ruta;
@@ -164,9 +165,9 @@ namespace CapaVistaModuloSCM.Procesos
             auxMantenimiento.IdMovimiento = int.Parse(txtNoInventario.Text);
             auxMantenimiento.IdProducto = Producto;
             auxMantenimiento.Cantidad1 = Cantidad;
-            MessageBox.Show("Producto " + Producto + " Cantidad " + Cantidad);
             return auxMantenimiento;
         }
+        //Obtener Documento asociado
         private void cmbDocuAsociado_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbDocuAsociado.SelectedIndex > -1)
@@ -176,14 +177,18 @@ namespace CapaVistaModuloSCM.Procesos
                 if (tipoMovimiento == 1)
                 {
                     dgvMovimiento.DataSource = movimientosInventarios.obtenerDetalles("fk_id_producto as 'Producto'", "cantidad_compra_detalle as 'Cantidad'", "compra_detalle", "fk_id_compra_encabezado", noDocu, "estado_compra_detalle");
-                }else if (tipoMovimiento == 3)
+                }else if (tipoMovimiento==2)
+                {
+                    dgvMovimiento.DataSource = movimientosInventarios.obtenerDetalles("fk_id_producto as 'Producto'", "cantidad as 'Cantidad'", "detalle_factura", "fk_id_factura", noDocu, "");
+                }                
+                else if (tipoMovimiento == 3)
                 {
                     dgvMovimiento.DataSource = movimientosInventarios.obtenerDetalles("fk_id_producto as 'Producto'", "cantidad_pedido_detalle as 'Cantidad'", "pedido_detalle", "fk_id_pedido_encabezado", noDocu, "estado_pedido_detalle");
                 }
 
             }
         }
-
+        //Ingreso de Datos
         private bool guardarDatos()
         {
             int CodLinea = 0, Producto, Cantidad;
@@ -206,7 +211,7 @@ namespace CapaVistaModuloSCM.Procesos
                         Cantidad = int.Parse(dgvMovimiento.Rows[CodLinea].Cells["Cantidad"].Value.ToString());
                         ++CodLinea;
                         this.detalleMovimiento = llenarCamposDetalle(Producto, Cantidad);
-                        movimientosInventarios.insertarDetalleMovimiento(detalleMovimiento, tipoMovimiento);
+                        movimientosInventarios.insertarDetalleMovimiento(detalleMovimiento, tipoMovimiento,noDocu);
                     }
                     MessageBox.Show("Datos de Movimiento de Inventario Ingresados", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Console.WriteLine("Movimiento Exitosa");
@@ -221,7 +226,7 @@ namespace CapaVistaModuloSCM.Procesos
                 return false;
             }
         }
-
+        //Obtener Tipo de Movimiento
         private void cmbTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbTipo.SelectedValue!=null&&cmbTipo.SelectedIndex>-1)
@@ -243,7 +248,13 @@ namespace CapaVistaModuloSCM.Procesos
                 }
                 else if (tipoMovimiento == 2)//VENTA
                 {
+                    bloquearComponentes(1);
                     cmbDocuAsociado.DataSource = null;
+                    cmbDocuAsociado.ValueMember = "pk_id_compra_encabezado";
+                    cmbDocuAsociado.DisplayMember = "pk_id_compra_encabezado";
+                    cmbDocuAsociado.DataSource = movimientosInventarios.obtenerNoCompraPedido("pk_id_factura", "facturas", "", "");
+                    cmbDocuAsociado.Refresh();
+                    cmbDocuAsociado.SelectedIndex = -1;
                     auxRuta = null;
                     auxVehiculo = null;
                     VaciarGrid();
@@ -278,6 +289,7 @@ namespace CapaVistaModuloSCM.Procesos
                 cmbDocuAsociado.DataSource = null;
             }
         }
+        //Limpiar Todos los componentes
         private void limpiarTodo()
         {
             DateTime fechaAux = DateTime.Now;
@@ -288,18 +300,20 @@ namespace CapaVistaModuloSCM.Procesos
             cmbTipo.SelectedIndex = -1;
             VaciarGrid();
         }
+        //Limpiar Traslados  de Rutas
         private void LimpiarTraslados()
         {
             cmbRuta.SelectedIndex = -1;
             cmbVehiculo.SelectedIndex = -1;
         }
+        //Vaciar el Grid
         private void VaciarGrid()
         {
             dgvMovimiento.ReadOnly = true;
             dgvMovimiento.Columns.Clear();
             dgvMovimiento.DataSource = null;
         }
-
+        //Validar Datos Grid
         private void dgvMovimiento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (dgvMovimiento.CurrentCell.ColumnIndex == 1)
@@ -309,7 +323,7 @@ namespace CapaVistaModuloSCM.Procesos
                     e.Handled = true;
             }
         }
-
+        //Habilitar la validacion
         private void dgvMovimiento_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (dgvMovimiento.CurrentCell.ColumnIndex == 1)
@@ -322,7 +336,7 @@ namespace CapaVistaModuloSCM.Procesos
                 }
             }
         }
-
+        //Vehiculo obtener
         private void cmbVehiculo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbVehiculo.SelectedIndex>-1&&cmbVehiculo.Enabled==true)
@@ -330,7 +344,7 @@ namespace CapaVistaModuloSCM.Procesos
                 auxVehiculo = int.Parse(cmbVehiculo.SelectedValue.ToString());
             }
         }
-
+        //Salida de formulario
         private void frmMovimientoInventarios_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult drResultadoMensaje;
@@ -344,12 +358,12 @@ namespace CapaVistaModuloSCM.Procesos
                 e.Cancel = true;
             }
         }
-
+        //Maximo de caracteres
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             txtDescripcion.MaxLength = 50;
         }
-
+        //Guardar
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (guardarDatos() == true)
@@ -362,7 +376,7 @@ namespace CapaVistaModuloSCM.Procesos
                 limpiarTodo();
             }
         }
-
+        //Generar grid de rutas
         private void GenerarGrid()
         {
             dgvMovimiento.ReadOnly = false;

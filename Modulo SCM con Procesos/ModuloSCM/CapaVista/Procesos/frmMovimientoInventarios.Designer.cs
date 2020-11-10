@@ -260,8 +260,10 @@
             // txtNoInventario
             // 
             this.txtNoInventario.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtNoInventario.Enabled = false;
             this.txtNoInventario.Location = new System.Drawing.Point(190, 35);
             this.txtNoInventario.Name = "txtNoInventario";
+            this.txtNoInventario.ReadOnly = true;
             this.txtNoInventario.Size = new System.Drawing.Size(100, 27);
             this.txtNoInventario.TabIndex = 7;
             // 

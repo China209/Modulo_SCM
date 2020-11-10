@@ -12,6 +12,8 @@ using CapaVistaModuloSCM.Mantenimientos.Tipo_de_Movimiento;
 using CapaVistaModuloSCM.Mantenimientos.Vehiculo;
 using CapaVistaModuloSCM.Procesos;
 using CapaVistaSeguridad;
+using CapaVistaSeguridad.Formularios;
+using CapaVistaSeguridad.Formularios.Mantenimientos;
 using System;
 /*
  Este formulario es el principal 
@@ -468,6 +470,7 @@ namespace CapaVistaModuloSCM.MDI
             if (seguridad.PermisosAcceso("2317", txtVistaUsuario.Text) == 1)
             {
                 bit.user(txtVistaUsuario.Text);
+                
                 Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMovimientoInventarios);
                 if (frmFormulario != null)
                 {
@@ -483,6 +486,180 @@ namespace CapaVistaModuloSCM.MDI
             {
                 MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
             }
+        }
+
+        private void cambioDeContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            bit.user(txtVistaUsuario.Text);
+            bit.insert("Ingreso a cambio de contraseña", 11);
+            Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmCambioContraseña);
+            if (frmFormulario != null)
+            {
+                frmFormulario.BringToFront();
+                return;
+            }
+
+            frmFormulario = new frmCambioContraseña(txtVistaUsuario.Text);
+            frmFormulario.MdiParent = this;
+            frmFormulario.Show();
+        }
+
+        private void mantenimientoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("2", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Mantenimiento Usuario", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMantenimientoUsuario);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmMantenimientoUsuario(txtVistaUsuario.Text);
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void mantenimientoAplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("3", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Mantenimiento Aplicacion", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmAplicativo);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmAplicativo();
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void asinacionDePerfilYAplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("6", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Asignacion Aplicacion", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmAsignacionDeAplicaciones);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmAsignacionDeAplicaciones();
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void mantenimientoModuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("8", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Mantenimiento Modulo", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmModulo);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmModulo(txtVistaUsuario.Text);
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void mantenimientoPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("4", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Mantenimiento Perfil", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmMantenimientoPerfil);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmMantenimientoPerfil(txtVistaUsuario.Text);
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void asignaciónDeAplicaciónAPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsVistaBitacora bit = new clsVistaBitacora();
+            clsFuncionesSeguridad seguridad = new clsFuncionesSeguridad();
+            if (seguridad.PermisosAcceso("5", txtVistaUsuario.Text) == 1)
+            {
+                bit.user(txtVistaUsuario.Text);
+                bit.insert("Ingreso a Asignacion Perfil Aplicacion", 2);
+                Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmAsignarAplicacionesAPerfil);
+                if (frmFormulario != null)
+                {
+                    frmFormulario.BringToFront();
+                    return;
+                }
+
+                frmFormulario = new frmAsignarAplicacionesAPerfil();
+                frmFormulario.MdiParent = this;
+                frmFormulario.Show();
+            }
+            else
+            {
+                MessageBox.Show("El Usuario No Cuenta Con Permisos De Acceso A La Aplicación");
+            }
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            txtVistaUsuario.Text = login.usuario();
         }
     }
 }

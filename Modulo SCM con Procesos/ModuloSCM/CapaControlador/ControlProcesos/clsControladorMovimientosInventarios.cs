@@ -40,11 +40,23 @@ namespace CapaControladorModuloSCM.ControlProcesos
         {
             try
             {
-                string sComando = string.Format("SELECT " + Campo1 + " ," + Campo2 + " FROM " + Tabla + " WHERE " + primaryKey + "="+noId+" AND "+estadoDetalle+"=1");
-                datos = new OdbcDataAdapter(sComando, conexion.conexion());
-                tabla = new DataTable();
-                datos.Fill(tabla);
-                return tabla;
+                if (estadoDetalle.Length == 0)
+                {
+                    string sComando = string.Format("SELECT " + Campo1 + " ," + Campo2 + " FROM " + Tabla + " WHERE " + primaryKey + "=" + noId);
+                    datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                    tabla = new DataTable();
+                    datos.Fill(tabla);
+                    return tabla;
+                }
+                else
+                {
+                    string sComando = string.Format("SELECT " + Campo1 + " ," + Campo2 + " FROM " + Tabla + " WHERE " + primaryKey + "=" + noId + " AND " + estadoDetalle + "=1");
+                    datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                    tabla = new DataTable();
+                    datos.Fill(tabla);
+                    return tabla;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -57,11 +69,23 @@ namespace CapaControladorModuloSCM.ControlProcesos
         {
             try
             {
-                string sComando = string.Format("SELECT " + Campo1  + " FROM " + Tabla + " WHERE " + Estado + "=1 AND "+estadoProceso+"=2");
-                datos = new OdbcDataAdapter(sComando, conexion.conexion());
-                tabla = new DataTable();
-                datos.Fill(tabla);
-                return tabla;
+                if (Estado.Length == 0 && estadoProceso.Length == 0)
+                {
+                    string sComando = string.Format("SELECT " + Campo1 + " FROM " + Tabla);
+                    datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                    tabla = new DataTable();
+                    datos.Fill(tabla);
+                    return tabla;
+                }
+                else
+                {
+                    string sComando = string.Format("SELECT " + Campo1 + " FROM " + Tabla + " WHERE " + Estado + "=1 AND " + estadoProceso + "=2");
+                    datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                    tabla = new DataTable();
+                    datos.Fill(tabla);
+                    return tabla;
+                }
+                
             }
             catch (Exception ex)
             {
@@ -133,12 +157,10 @@ namespace CapaControladorModuloSCM.ControlProcesos
                 {
                     comando.CommandText = "INSERT INTO movimiento_inventario (pk_id_movimiento_inventario, fecha_movimiento_inventario, fk_id_tipo_movimiento, fk_id_ruta, fk_id_vehiculo,documento_asociado_movimiento_inventario, descripcion_movimiento_inventario) VALUES (" +
                         +movimiento.IdMovimiento+",'"+movimiento.Fecha1.ToString(format)+"',"+movimiento.IdTipoMovimiento+", NULL, NULL,"+movimiento.DocuAsociado+",'"+movimiento.Descripcion1+"');";
-                    MessageBox.Show(movimiento.IdRuta + "-" + movimiento.IdVehiculo + "-" + movimiento.DocuAsociado, "Recepcion Datos Encabezado");
                 }else if (movimiento.DocuAsociado == null)
                 {
                     comando.CommandText = "INSERT INTO movimiento_inventario (pk_id_movimiento_inventario, fecha_movimiento_inventario, fk_id_tipo_movimiento, fk_id_ruta, fk_id_vehiculo,documento_asociado_movimiento_inventario, descripcion_movimiento_inventario) VALUES (" +
                         +movimiento.IdMovimiento + ",'" + movimiento.Fecha1.ToString(format) + "'," + movimiento.IdTipoMovimiento + ","+movimiento.IdRuta+","+movimiento.IdVehiculo+", NULL, '" + movimiento.Descripcion1 + "');";
-                    MessageBox.Show(movimiento.IdRuta + "-" + movimiento.IdVehiculo + "-" + movimiento.DocuAsociado, "Recepcion Datos Encabezado");
                 }
                 comando.ExecuteNonQuery();
                 transaction.Commit();
@@ -152,7 +174,7 @@ namespace CapaControladorModuloSCM.ControlProcesos
             }
         }
 
-        public void insertarDetalleMovimiento(clsDetalleMovimiento detalleMovimiento, int tipoMovimiento)
+        public void insertarDetalleMovimiento(clsDetalleMovimiento detalleMovimiento, int tipoMovimiento, int? docuAsociado)
         {
             string SQL = "";
             int CantidadAnterior, datosExistentes,bodegaRandom;
@@ -179,7 +201,6 @@ namespace CapaControladorModuloSCM.ControlProcesos
                 
                 if (tipoMovimiento == 1)
                 {
-                    MessageBox.Show("TIPO 1");
                     SQL = "SELECT COUNT(*) FROM inventario WHERE fk_id_producto="+detalleMovimiento.IdProducto;
                     comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
                     datosExistentes = int.Parse(comandoActualizacion.ExecuteScalar().ToString());
@@ -188,14 +209,12 @@ namespace CapaControladorModuloSCM.ControlProcesos
                     OdbcDataReader registro = actualizar.ExecuteReader();
                     if (datosExistentes == 0)
                     {
-                        MessageBox.Show("NO EXISTIA INVENTARIO");
                         SQL = "INSERT INTO inventario (pk_id_inventario, fk_id_producto, cantidad_inventario,estado_inventario) VALUES (" +generarID("inventario","pk_id_inventario")+","+ detalleMovimiento.IdProducto + ","+ detalleMovimiento.Cantidad1 + ",1);";
                         comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
                         comandoActualizacion.ExecuteNonQuery();
                     }
                     else
                     {
-                        MessageBox.Show("EXISTIA INVENTARIO");
                         while (registro.Read())
                         {
                             CantidadAnterior = int.Parse(registro["cantidad_inventario"].ToString());
@@ -207,7 +226,6 @@ namespace CapaControladorModuloSCM.ControlProcesos
                 }
                 else if (tipoMovimiento == 2)
                 {
-                    MessageBox.Show("TIPO 2");
                     SQL = "SELECT COUNT(*) FROM inventario WHERE fk_id_producto=" + detalleMovimiento.IdProducto;
                     comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
                     datosExistentes = int.Parse(comandoActualizacion.ExecuteScalar().ToString());
@@ -220,7 +238,6 @@ namespace CapaControladorModuloSCM.ControlProcesos
                     }
                     else
                     {
-                        MessageBox.Show("EXISTIA INVENTARIO");
                         while (registro.Read())
                         {
                             CantidadAnterior = int.Parse(registro["cantidad_inventario"].ToString());
@@ -232,13 +249,11 @@ namespace CapaControladorModuloSCM.ControlProcesos
                             }
                             else
                                 MessageBox.Show("La cantidad a actualizar es mayor que la que existe en stock", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            
                         }
                     }
                 }
                 else if (tipoMovimiento == 3)
                 {
-                    MessageBox.Show("TIPO 3");
                     SQL = "SELECT COUNT(*) FROM existencia WHERE fk_id_producto=" + detalleMovimiento.IdProducto;
                     comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
                     datosExistentes = int.Parse(comandoActualizacion.ExecuteScalar().ToString());
@@ -247,7 +262,6 @@ namespace CapaControladorModuloSCM.ControlProcesos
                     OdbcDataReader registro = actualizar.ExecuteReader();
                     if (datosExistentes == 0)
                     {
-                        MessageBox.Show("NO EXISTIA INVENTARIO");
                         SQL = "SELECT pk_id_bodega FROM bodega ORDER BY RAND() LIMIT 1 ";
                         comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
                         bodegaRandom = int.Parse(comandoActualizacion.ExecuteScalar().ToString());
@@ -257,7 +271,6 @@ namespace CapaControladorModuloSCM.ControlProcesos
                     }
                     else
                     {
-                        MessageBox.Show("EXISTIA INVENTARIO");
                         while (registro.Read())
                         {
                             CantidadAnterior = int.Parse(registro["cantidad_existencia"].ToString());
@@ -268,6 +281,36 @@ namespace CapaControladorModuloSCM.ControlProcesos
                     }
                 }
                 comando.ExecuteNonQuery();
+                if (docuAsociado != null)
+                {
+                    if (tipoMovimiento == 1)
+                    {
+                        SQL = "UPDATE compra_detalle SET estado_compra_detalle=0 WHERE fk_id_compra_encabezado=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                        SQL = "UPDATE compra_encabezado SET estado_encabezado_compra=0 WHERE pk_id_compra_encabezado=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                    }
+                    else if (tipoMovimiento == 2)
+                    {
+                        SQL = "DELETE FROM detalle_factura WHERE fk_id_factura=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                        SQL = "DELETE FROM facturas WHERE pk_id_factura=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                    }
+                    else if (tipoMovimiento == 3)
+                    {
+                        SQL = "UPDATE pedido_detalle SET estado_pedido_detalle=0 WHERE fk_id_pedido_encabezado=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                        SQL = "UPDATE pedido_encabezado SET estado_pedido_encabezado=0 WHERE pk_id_pedido_encabezado=" + docuAsociado;
+                        comandoActualizacion = new OdbcCommand(SQL, conexion.conexion());
+                        comandoActualizacion.ExecuteNonQuery();
+                    }
+                }
                 transaction.Commit();
                 Console.WriteLine("Transaccion Exitosa Tabla 2");
             }
