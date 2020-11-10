@@ -4,29 +4,31 @@ INSERT INTO `login` (`pk_id_login`, `usuario_login`, `contraseña_login`, `nombr
 (3, 'bmaza', 'xTfsC3/XR/CVyDvNr1Fs+g==', 'Bryan Mazariegos', 1),
 (4, 'jsican', 'jsican', 'Jeshua Sican', 0),
 (5, 'jmorataya', '123', 'Julio Morataya', 0),
+('6', 'admin', 'T+4Ai6O3CR0kJYxCgXy2jA==', 'Administrador', '1'),
 (100, 'Cyndi', '8zSCkFhA9DUcqH//GEAN/A==', 'Cyndi Medina', 1);
 
-INSERT INTO `permiso` (`pk_id_permiso`, `insertar_permiso`, `modificar_permiso`, `eliminar_permiso`, `consultar_permiso`, `imprimir_permiso`) VALUES
-(1, 1, 1, 1, 1, 1),
-(2, 1, 0, 0, 1, 1),
-(3, 1, 1, 1, 0, 0),
-(4, 1, 1, 1, 1, 1),
-(5, 1, 1, 1, 1, 1),
-(6, 1, 1, 1, 1, 1),
-(7, 1, 1, 1, 1, 1),
-(8, 1, 0, 1, 0, 0),
-(9, 1, 1, 0, 0, 0),
-(10, 1, 1, 0, 0, 0),
-(11, 1, 1, 1, 1, 1),
-(12, 0, 0, 0, 1, 0),
-(13, 0, 0, 0, 1, 0),
-(14, 0, 0, 0, 0, 0),
-(15, 1, 0, 0, 1, 0),
-(16, 0, 0, 0, 0, 0),
-(17, 1, 1, 0, 0, 0),
-(18, 0, 0, 0, 0, 0),
-(19, 0, 0, 0, 0, 0),
-(20, 0, 0, 0, 0, 0);
+INSERT INTO permiso VALUES 
+('1', '1', '1', '1', '1', '1'),
+('2', '1', '0', '0', '1', '1'),
+('3', '1', '1', '1', '0', '0'),
+('4', '1', '1', '1', '1', '1'),
+('5', '1', '1', '1', '1', '1'),
+('6', '1', '1', '1', '1', '1'),
+('7', '1', '1', '1', '1', '1'),
+('8', '1', '0', '1', '0', '0'),
+('9', '1', '1', '0', '0', '0'),
+('10', '1', '1', '0', '0', '0'),
+('11', '1', '1', '1', '1', '1'),
+('12', '0', '0', '0', '1', '0'),
+('13', '0', '0', '0', '1', '0'),
+('14', '0', '0', '0', '0', '0'),
+('15', '1', '0', '0', '1', '0'),
+('16', '0', '0', '0', '0', '0'),
+('17', '1', '1', '0', '0', '0'),
+('18', '1', '1', '1', '1', '1'),
+('19', '0', '1', '0', '0', '0'),
+('20', '1', '1', '0', '0', '0'),
+('21', '1', '1', '1', '0', '0');
 
 INSERT INTO `modulo` (`pk_id_modulo`, `nombre_modulo`, `descripcion_modulo`, `estado_modulo`) VALUES
 (1, 'Seguridad', 'Aplicaciones de seguridad', 1),
@@ -39,7 +41,7 @@ INSERT INTO `modulo` (`pk_id_modulo`, `nombre_modulo`, `descripcion_modulo`, `es
 (8, 'CRM', 'Aplicaciones de Ventas', 1);
 
 
-INSERT INTO `aplicacion` (`pk_id_aplicacion`, `fk_id_modulo`, `nombre_aplicacion`, `descripcion_aplicacion`, `estado_aplicacion`) VALUES
+INSERT INTO aplicacion VALUES 
 (1, 1, 'Login', 'Ventana de Ingreso', 1),
 (2, 1, 'Mantenimiento Usuario', 'Mantenimientos de usuario', 1),
 (3, 1, 'Mantenimiento Aplicacion', 'ABC de las Aplicaciones', 1),
@@ -74,16 +76,25 @@ INSERT INTO `aplicacion` (`pk_id_aplicacion`, `fk_id_modulo`, `nombre_aplicacion
 (2316, 6, 'Compras y Pedidos', 'Gestión de Órdenes de Compra y Pedido', 1),
 (2317, 6, 'Movimiento de Inventarios', 'Actualizacion de Inventarios', 1),
 (2318, 6, 'Fabrica', 'Fabrica', 1),
-(2319, 6, 'Gestión de Compras y Pedidos', 'Se controla los datos de estas tablas ', 1);
+(2319, 6, 'Gestión de Compras y Pedidos', 'Se controla los datos de estas tablas ', 1),
+(3301, 7, 'MDI MRP', 'Ventana Principal MRP', 1),
+(3302, 7, 'Mantenimiento Producto', 'Mantenimiento de los productos', 1),
+(3303, 7, 'Mantenimiento de Categoria de produccion', 'Mantenimiento de Categoria de productos', 1),
+(3304, 7, 'Mantenimiento de Estado de Produccion', 'Mantenimiento de Estados de  produccion', 1),
+(3305, 7, 'Mantenimiento de Linea de produccion MRP', 'Mantenimiento de MRP para linea de producto', 1),
+(3306, 7, 'Mantenimiento de Encabezado de receta', 'Mantenimiento de MRP de reseta ', 1),
+(3307, 7, 'Mantenimiento de Detalle de Receta', 'Mantenimiento del detalle de la receta', 1),
+(3308, 7, 'Proceso Resepcion de pedidos especiales', 'Proceso para ingreso de pedidos', 1);
 
 
-INSERT INTO `perfil` (`pk_id_perfil`, `nombre_perfil`, `descripcion_perfil`, `estado_perfil`) VALUES
-(1, 'Admin', 'Administracion del programa', 1),
-(2, 'Sistema', 'Administrador del sistema', 1),
-(3, 'Digitador', 'Digitador para Cuentas', 1),
-(4, 'Consultor', 'Unicamente consultas ', 1),
-(5, 'Reportes', 'Ingreso y consultas de reportes', 1),
-(6, 'Pruebas', 'pruebas', 1);
+INSERT INTO perfil VALUES 
+('1', 'Admin', 'Administracion del programa', '1'),
+('2', 'Sistema', 'Administrador del sistema', '1'),
+('3', 'Digitador', 'Digitador para Cuentas', '1'),
+('4', 'Consultor', 'Unicamente consultas ', '1'),
+('5', 'Reportes', 'Ingreso y consultas de reportes', '1'),
+('6', 'Pruebas', 'pruebas', '1'),
+('7', 'Administrador', 'Administrador del MRP', '1');
 
 INSERT INTO `perfil_usuario` (`pk_id_perfil_usuario`, `fk_idusuario_perfil_usuario`, `fk_idperfil_perfil_usuario`) VALUES
 (1, 1, 1),
@@ -101,6 +112,9 @@ INSERT INTO `aplicacion_usuario` (`pk_id_aplicacion_usuario`, `fk_idlogin_aplica
 (5, 4, 6, 14),
 (6, 5, 5, 16),
 (7, 5, 2, 17),
+(8, 6, 3302, 18),
+(9, 6, 2, 19),
+(10, 6, 3, 20),
 (101, 100, 2313, 1),
 (102, 100, 2316, 1),
 (103, 100, 2314, 1),
@@ -129,22 +143,21 @@ INSERT INTO `aplicacion_usuario` (`pk_id_aplicacion_usuario`, `fk_idlogin_aplica
 
 
 
-INSERT INTO `aplicacion_perfil` (`pk_id_aplicacion_perfil`, `fk_idaplicacion_aplicacion_perfil`, `fk_idperfil_aplicacion_perfil`, `fk_idpermiso_aplicacion_perfil`) VALUES
-(1, 1, 1, 1),
-(2, 4, 1, 2),
-(3, 5, 1, 3),
-(4, 2, 1, 4),
-(5, 3, 1, 5),
-(6, 6, 1, 6),
-(7, 8, 1, 7),
-(8, 2, 3, 8),
-(9, 3, 3, 9),
-(10, 4, 3, 11),
-(11, 2, 4, 12),
-(12, 8, 4, 13),
-(13, 8, 5, 15),
-(14, 9, 1, 19),
-(15, 10, 1, 20);
+INSERT INTO aplicacion_perfil VALUES 
+('1', '1', '1', '1'),
+('2', '4', '1', '2'),
+('3', '5', '1', '3'),
+('4', '2', '1', '4'),
+('5', '3', '1', '5'),
+('6', '6', '1', '6'),
+('7', '8', '1', '7'),
+('8', '2', '3', '8'),
+('9', '3', '3', '9'),
+('10', '4', '3', '11'),
+('11', '2', '4', '12'),
+('12', '8', '4', '13'),
+('13', '8', '5', '15'),
+('14', '8', '7', '21');
 
 
 
