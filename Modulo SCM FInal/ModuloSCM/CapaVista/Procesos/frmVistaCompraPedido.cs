@@ -30,6 +30,14 @@ namespace CapaVistaModuloSCM.Procesos
         {
             dgvVistaDatos.DataSource = controladorGestionCompraPedido.obtenerDatosPedido();
         }
+        private void cargarDatosExistencia()
+        {
+            dgvVistaDatos.DataSource = controladorGestionCompraPedido.obtenerDatosExistencias();
+        }
+        private void cargarDatosInventario()
+        {
+            dgvVistaDatos.DataSource = controladorGestionCompraPedido.obtenerDatosInventario();
+        }
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Form frmFormulario = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is frmCompras);
@@ -79,6 +87,24 @@ namespace CapaVistaModuloSCM.Procesos
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "AyudasModuloSCM/AyudasSCMASII.chm", "VistaCompras.html");
+        }
+
+        private void rbtnInventario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnInventario.Checked)
+            {
+                dgvVistaDatos.DataSource = null;
+                cargarDatosInventario();
+            }
+        }
+
+        private void rbtnExistencias_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnExistencias.Checked)
+            {
+                dgvVistaDatos.DataSource = null;
+                cargarDatosExistencia();
+            }
         }
     }
 }

@@ -238,5 +238,43 @@ namespace CapaControladorModuloSCM.ControlProcesos
                 return null;
             }
         }
+        //Ver Existencias
+        public DataTable obtenerDatosExistencias()
+        {
+            try
+            {
+                string sComando = "SELECT pk_id_existencia as 'No. Existencia', fk_id_bodega as 'Bodega', fk_id_producto as 'Producto', cantidad_existencia as 'Cantidad' from existencia where estado_existencia=1";
+                datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                tabla = new DataTable();
+                datos.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener datos");
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+        //Ver Inventario
+        public DataTable obtenerDatosInventario()
+        {
+            try
+            {
+                string sComando = "SELECT pk_id_inventario as 'No. Inventario', fk_id_producto as 'Producto', cantidad_inventario as 'Cantidad' from inventario where estado_inventario=1";
+                datos = new OdbcDataAdapter(sComando, conexion.conexion());
+                tabla = new DataTable();
+                datos.Fill(tabla);
+                return tabla;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener datos");
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
     }
 }
